@@ -57,19 +57,6 @@ function App() {
     setTimeout(setDummy(dummy+1), 10000);
   }), []);
 
-
-  //var reports = [];
-
-  //const repref = child(ref(database), 'reports');
-
-
-  /*onChildAdded(repref, (snapshot) => {
-    reports.unshift(snapshot.val());
-  });
-
-  useEffect(() => window.localStorage.setItem('reports', JSON.stringify(reports)));
-  if (reports.length === 0) reports = JSON.parse(window.localStorage.getItem('reports'));*/
-
   const listReports = reports.filter(report => report.state === state).slice((page-1)*4,page*4).map(report => {
 
     const photolist = JSON.parse(report.photo);
