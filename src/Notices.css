@@ -1,0 +1,126 @@
+.Noti {
+    text-align: center;
+}
+
+.Noti-header {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: black;
+}
+
+.Noti-notibox {
+    background: linear-gradient(#AC91E6 , white, #AC91E6);
+    width: 55rem;
+    height: 60.5rem;
+}
+
+.Noti-title {
+    margin-bottom: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    width: 20rem;
+    font-size: xx-large;
+    position: relative;
+    top: 0.5rem; left: 17.5rem;
+}
+
+.Noti-case {
+    background-color: white;
+    border-radius: 10px;
+    width: 52.5rem;
+    height: 51.5rem;
+    position: relative;
+    left: 1.25rem;
+}
+
+.Noti-noti {
+    margin-left: 1.25rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    background-color: #7F56D9;
+    opacity: 0.65;
+    border-radius: 10px;
+    width: 50rem;
+    height: 6.5rem;
+    position: relative;
+    top:1.25rem;
+}
+
+.Noti-date {
+    background-color: white;
+    border-radius: 10px;
+    width: 17rem;
+    position: relative;
+    top: 10%; left: 1.5%;
+}
+
+.Noti-cont {
+    background-color: white;
+    border-radius: 10px;
+    width: 48rem;
+    height: 2rem;
+    position: relative;
+    top: 30%; left: 1.5%;
+}
+
+.Noti-link {
+    width: 8rem;
+    position: relative;
+    bottom: 3.32rem; left: 40rem;
+    float: left;
+    text-decoration: none;
+    color: black;
+}
+
+.Noti-page {
+    background-color: white;
+    width: 2rem;
+    height: 2.5rem;
+    position: relative;
+    top: 0.5rem; left: 25.25rem;
+    border-radius: 5px;
+    float: left;
+}
+
+.Noti-down {
+    height: 2.5rem;
+    position: relative;
+    top: 0.5rem; left: 24.25rem;
+    float: left;
+}
+
+.Noti-up {
+    height: 2.5rem;
+    position: relative;
+    top: 0.5rem; left: 26.26rem;
+    float: left;
+}
+
+.Noti-write {
+    background-color: #7F56D9;
+    opacity: 0.65;
+    border-radius: 10px;
+    width: 8rem;
+    position: relative;
+    top: 0.5rem; left: 18rem;
+    text-decoration: none;
+    color: white;
+}
+
+.Noti-bspace {
+    width: 3rem;
+    height: 3rem;
+    font-size: xx-large;
+    text-decoration: none;
+    background-color: #7F56D9;
+    opacity: 0.8;
+    border-radius: 1rem;
+    color: white;
+    position: absolute;
+    top: calc(0% + 0.5rem); left: calc(50% - 27.25rem);
+}

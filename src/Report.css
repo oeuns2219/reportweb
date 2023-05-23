@@ -1,0 +1,170 @@
+.Rep {
+    text-align: center;
+}
+  
+.Rep-header {
+    background-color: #D9D9D9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: black;
+}
+
+.Rep-report {
+    background: linear-gradient(#AC91E6, 10%, white);
+    width: 55rem;
+    height: 60.5rem;
+}
+
+.Rep-type {
+    color: white;
+    background-color: #7F56D9;
+    opacity: 0.75;
+    border-radius: 10px;
+    width: 20rem;
+    margin-top: 1rem;
+    position: relative;
+    left: 17.5rem;
+}
+
+.Rep-photo {
+    width: 35rem;
+    height: 25rem;
+    margin: 0.5rem;
+}
+
+.Rep-pos {
+    color: white;
+    background-color: #7F56D9;
+    opacity: 0.75;
+    border-radius: 10px;
+    width: 20rem;
+    margin-bottom: 1rem;
+    position: relative;
+    left: 17.5rem;
+}
+
+.Rep-date {
+    font-size: 20px;
+    width: 14rem;
+    position: relative;
+    bottom: 55rem; left: 2.75rem;
+}
+
+.Rep-detail {
+    background-color: #D9D9D9;
+    opacity: 0.75;
+    border-radius: 10px;
+    width: 51rem;
+    height: 18rem;
+    margin-left: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.Rep-state {
+    color: white;
+    background-color: #7F56D9;
+    opacity: 0.75;
+    border-radius: 10px;
+    width: 10rem;
+    float: left;
+    position: relative;
+    bottom: calc(24rem - 9px); left: 1rem;
+}
+
+.Rep-accbtn {
+    font-size: large;
+    height: 2.5rem;
+    position: relative;
+    bottom: 23.9rem; left: 21rem;
+}
+
+.Rep-resbtn {
+    font-size: large;
+    height: 2.5rem;
+    position: relative;
+    bottom: 23.9rem; left: 21.5rem;
+}
+
+.Rep-shabtn {
+    color: white;
+    background-color: #7F56D9;
+    opacity: 0.75;
+    border-radius: 10px;
+    font-size: xx-large;
+    position: relative;
+    top: 1rem; right: 14.25rem;
+    text-decoration: none;
+}
+
+.Rep-pnumbtn {
+    font-size: large;
+    height: 2.5rem;
+    position: relative;
+    bottom: 52.75rem; left: 16rem;
+}
+
+.Rep-popdown {
+    background-color: black;
+    visibility: hidden;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 0%;
+    width: 55rem;
+    height: 61rem;
+    z-index: 1;
+}
+
+.Rep-popup {
+    visibility: hidden;
+    height: 5rem;
+    padding: 1rem;
+    background-color: #D9D9D9;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 50%; left: calc(50% - 203.5px);
+    z-index: 2;
+}
+
+.Rep-pnum {
+    visibility: hidden;
+    font-size: 2rem;
+    width: 15rem;
+    height: 3rem;
+    background-color: #D9D9D9;
+    border-radius: 6px;
+    position: absolute;
+    top: 1.75%; right: 43.5%;
+    z-index: 2;
+}
+
+.Rep-down {
+    height: 2.5rem;
+    position: absolute;
+    top: 24%; right: calc(50% + 25rem);
+    float: left;
+}
+
+.Rep-up {
+    height: 2.5rem;
+    position: absolute;
+    top: 24%; left: calc(50% + 25rem);
+    float: left;
+}
+
+.Rep-bspace {
+    width: 3rem;
+    height: 3rem;
+    font-size: xx-large;
+    text-decoration: none;
+    background-color: #7F56D9;
+    opacity: 0.8;
+    border-radius: 1rem;
+    color: white;
+    position: absolute;
+    top: calc(0% + 0.5rem); left: calc(50% - 27.5rem);
+}

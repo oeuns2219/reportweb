@@ -1,0 +1,62 @@
+.Lay {
+    text-align: center;
+}
+
+.Lay-header {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: black;
+}
+
+.Lay-lay {
+    background: linear-gradient(#AC91E6 , white, #AC91E6);
+    border-radius: 10px;
+    height: 50rem;
+    width: 30rem;
+}
+
+.Lay-title {
+    background-color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    width: 18rem;
+    position: relative;
+    left: 6rem;
+}
+
+.Lay-img {
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    width: 25rem;
+    position: relative;
+    left: 2.5rem;
+}
+
+.Lay-notibtn {
+    color: black;
+    background-color: white;
+    opacity: 0.75;
+    border-radius: 10px;
+    position: relative;
+    top: 1rem; left: 6.25rem;
+    font-size: xx-large;
+    text-decoration: none;
+}
+
+.Lay-repbtn {
+    color: black;
+    background-color: white;
+    opacity: 0.75;
+    border-radius: 10px;
+    position: relative;
+    top: 4.75rem; right: 6.25rem;
+    font-size: xx-large;
+    text-decoration: none;
+}
