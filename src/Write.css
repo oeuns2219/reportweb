@@ -53,11 +53,18 @@
     color: black;
 }
 
+.Wrt-tinput {
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    width: 50.5rem;
+}
+
 .Wrt-input {
     font-size: 1.5rem;
     width: 50.5rem;
     height: 37.5rem;
-
+    border-radius: 10px;
 }
 
 .Wrt-btn {

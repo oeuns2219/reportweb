@@ -1,46 +1,73 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux';
-import { setuid } from './reducers/user';
+import { useDispatch, useSelector } from 'react-redux';
+import { setuid, setcode } from './reducers/user';
 import { database } from './firebase';
 import { ref, child, onChildAdded } from 'firebase/database';
 
-let reports = [];
-const reportRef = child(ref(database), "reports");
+//let reports = [];
+//const reportRef = child(ref(database), "reports");
+const statelist = ['미접수', '처리중', '처리완료'];
 
 function App() {
 
   const [state, setState] = useState('미접수');
   const [page, setPage] = useState(1);
-  const [dummy, setDummy] = useState(1);
+  //const [dummy, setDummy] = useState(1);
+  var usercode = useSelector((state) => state.user.code);
   const dispatch = useDispatch();
+
+  useEffect(()=>window.localStorage.setItem('usercode', JSON.stringify(usercode)));
+  if (usercode === null) usercode = JSON.parse(window.localStorage.getItem('usercode'));
 
   function repCli(evt) {
     dispatch(setuid(evt.target.parentElement.id));
+    dispatch(setcode(usercode));
+  }
+
+  function btnhover(evt) {
+    if (evt.target.value !== state) evt.target.style.backgroundColor = 'rgba(193, 161, 255, 1)';
+  }
+
+  function btnhout(evt) {
+    if (evt.target.value === state) evt.target.style.backgroundColor = 'rgba(126, 83, 217, 1)';
+    else evt.target.style.backgroundColor = 'rgba(172, 145, 230, 1)';
   }
 
   function unaCli() {
-    document.getElementById('unabtn').style.backgroundColor = '#7e53d9';
-    document.getElementById('probtn').style.backgroundColor = '#AC91E6';
-    document.getElementById('resbtn').style.backgroundColor = '#AC91E6';
+    document.getElementById('unabtn').style.backgroundColor = 'rgba(126, 83, 217, 1)';
+    document.getElementById('probtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    document.getElementById('resbtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    document.getElementById('shabtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
     setState('미접수');
     setPage(1);
   }
 
   function proCli() {
-    document.getElementById('probtn').style.backgroundColor = '#7e53d9';
-    document.getElementById('unabtn').style.backgroundColor = '#AC91E6';
-    document.getElementById('resbtn').style.backgroundColor = '#AC91E6';
+    document.getElementById('probtn').style.backgroundColor = 'rgba(126, 83, 217, 1)';
+    document.getElementById('unabtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    document.getElementById('resbtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    document.getElementById('shabtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
     setState('처리중');
     setPage(1);
   }
 
   function resCli() {
-    document.getElementById('resbtn').style.backgroundColor = '#7e53d9';
-    document.getElementById('probtn').style.backgroundColor = '#AC91E6';
-    document.getElementById('unabtn').style.backgroundColor = '#AC91E6';
+    document.getElementById('resbtn').style.backgroundColor = 'rgba(126, 83, 217, 1)';
+    document.getElementById('probtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    document.getElementById('unabtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    document.getElementById('shabtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
     setState('처리완료');
+    setPage(1);
+  }
+
+  function shaCli() {
+    document.getElementById('shabtn').style.backgroundColor = 'rgba(126, 83, 217, 1)';
+    document.getElementById('probtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    document.getElementById('unabtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    document.getElementById('resbtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    setState('공유받음');
     setPage(1);
   }
 
@@ -51,13 +78,26 @@ function App() {
   function upCli() {
     if (reports.filter(report => report.state === state).length > page*4) setPage(page+1);
   }
-
+/*
   useEffect(()=>onChildAdded(reportRef, (snapshot) => {
     reports.unshift(snapshot.val())
     setTimeout(setDummy(dummy+1), 10000);
-  }), []);
+  }), []);*/
 
-  const listReports = reports.filter(report => report.state === state).slice((page-1)*4,page*4).map(report => {
+  var reports = [];
+
+  const repref = child(ref(database), 'reports');
+
+
+  onChildAdded(repref, (snapshot) => {
+    reports.unshift(snapshot.val());
+  });
+  useEffect(() => window.localStorage.setItem('reports', JSON.stringify(reports)));
+  if (reports.length === 0) reports = JSON.parse(window.localStorage.getItem('reports'));
+
+  const filtered = statelist.includes(state) ? reports.filter(report => report.state === state) : reports.filter(reports => JSON.parse(reports.shareList).includes(usercode));
+
+  const listReports = filtered.slice((page-1)*4,page*4).map(report => {
 
     const photolist = JSON.parse(report.photo);
     if (photolist.length === 0) photolist.push('https://th.bing.com/th/id/R.923babff12c4e08cc3db9e9143305b83?rik=S71iitc3knLN5Q&riu=http%3a%2f%2fgeojecci.korcham.net%2fimages%2fno-image01.gif&ehk=ztZd4ifLqQB%2bB%2fhDnfHNxKuZekmp7BYwrWa9UJGJmes%3d&risl=&pid=ImgRaw&r=0');
@@ -71,7 +111,7 @@ function App() {
         <section className='App-type'>{report.type}</section>
         <section className='App-pos'>{report.position}</section>
         <section className='App-date'>{report.date}</section>
-        <Link to='/reportlist/report' onClick={repCli} className='App-link'>자세히 보기</Link>
+        <Link to='/home/reportlist/report' onClick={repCli} className='App-link'>자세히 보기</Link>
       </article>
     );
   });
@@ -83,17 +123,17 @@ function App() {
           <div className='App-title'>주민신고내역</div>
           <div className='App-case'>
             <div className='App-sbtn'>
-              <button className='App-filter' onClick={unaCli} id='unabtn'>미접수</button>
-              <button className='App-filter' onClick={proCli} id='probtn'>처리중</button>
-              <button className='App-filter' onClick={resCli} id='resbtn'>처리완료</button>
-              <button className='App-filter' >공유됨</button>
+              <input className='App-filter' onClick={unaCli} onMouseOver={btnhover} onMouseOut={btnhout} id='unabtn' type='button' value='미접수'></input>
+              <input className='App-filter' onClick={proCli} onMouseOver={btnhover} onMouseOut={btnhout} id='probtn' type='button' value='처리중'></input>
+              <input className='App-filter' onClick={resCli} onMouseOver={btnhover} onMouseOut={btnhout} id='resbtn' type='button' value='처리완료'></input>
+              <input className='App-filter' onClick={shaCli} onMouseOver={btnhover} onMouseOut={btnhout} id='shabtn' type='button' value='공유받음'></input>
             </div>
             {listReports}
           </div>
           <button className='App-down' onClick={downCli}>&lt;</button>
           <div className='App-page'>{page}</div>
           <button className='App-up' onClick={upCli}>&gt;</button>
-          <Link className='App-bspace' to='/'>&#27;</Link>
+          <Link className='App-bspace' to='/home'>&#27;</Link>
         </div>
       </header>
     </div>

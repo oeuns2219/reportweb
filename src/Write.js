@@ -14,6 +14,7 @@ function Write () {
         const newkey = push(notiref).key;
 
         notice['uid'] = newkey;
+        notice['title'] = document.getElementById('title').value;
         notice['content'] = document.getElementById('content').value;
 
         set(ref(database, 'notices/' + newkey), notice);
@@ -28,14 +29,15 @@ function Write () {
         return (
             <div className='Wrt-notice'>
                 <div className='Wrt-title'>공지사항</div>
+                <input type="text" id="title" placeholder='공지제목을 적어주세요.' className='Wrt-tinput'></input>
                 <div className='Wrt-date'>{notice.date}</div>
                 <div className='Wrt-content'>
                     <textarea id='content' placeholder='공지할 내용을 적어주세요.' className='Wrt-input'></textarea>
                 </div>
                 <button className='Wrt-btn' onClick={btnCli}>등록하기</button>
                 <span className='Wrt-popup' id='pu'>공지사항이 등록되었습니다.</span>
-                <Link to='/noticelist' className='Wrt-popdown' id='pd'></Link>
-                <Link className='Wrt-bspace' to='/noticelist'>&#27;</Link>
+                <Link to='/home/noticelist' className='Wrt-popdown' id='pd'></Link>
+                <Link className='Wrt-bspace' to='/home/noticelist'>&#27;</Link>
             </div>
         );
     }

@@ -11,18 +11,24 @@ import Layout from './Layout';
 import Notices from './Notices';
 import Notice from './Notice';
 import Write from './Write';
+import Login from './Login';
+import Share from './Share';
+import Share1 from './Share2';
 
 class Routing extends React.Component {
   render() {
     return (
       <Router>
         <Routes>
-          <Route index element={<Layout />}/>
-          <Route exact path='/noticelist' element={<Notices />}/>
-          <Route exact path='/noticelist/notice' element={<Notice />}/>
-          <Route exact path='/noticeList/write' element={<Write />}/>
-          <Route exact path='/reportlist' element={<App />}/>
-          <Route exact path='/reportlist/report'element={<Report />}/>
+          <Route index element={<Login />}/>
+          <Route exact path='/home' element={<Layout />}/>
+          <Route exact path='/home/noticelist' element={<Notices />}/>
+          <Route exact path='/home/noticelist/notice' element={<Notice />}/>
+          <Route exact path='/home/noticeList/write' element={<Write />}/>
+          <Route exact path='/home/reportlist' element={<App />}/>
+          <Route exact path='/home/reportlist/report' element={<Report />}/>
+          <Route exact path='/home/reportlist/report/share' element={<Share />}/>
+          <Route exact path='/home/reportlist/report/share1' element={<Share1 />}/>
         </Routes>
       </Router>
     )

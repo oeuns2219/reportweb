@@ -6,14 +6,19 @@ export const setuid = (uid:number) => ({
     payload: uid,
 });
 
+export const setcode = (code:number) => ({
+    type: 'SET_CODE',
+    payload: code,
+});
+
 type UserInitialType = {
     uid: number | null,
-    cnt: number,
+    code: number | null,
 }
 
 const initialState = {
     uid: null,
-	cnt: 0,
+	code: null,
 }
 
 type UserActionType =
@@ -28,10 +33,10 @@ const user = (state:UserInitialType = initialState, action:UserActionType) => {
             }
         }
 
-		case 'INCREASE': {
+		case 'SET_CODE': {
 			return {
 				...state,
-				cnt: state.cnt + 1
+				code: action.payload,
 			}
 		}
         default:

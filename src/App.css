@@ -39,12 +39,32 @@
 }
 
 .App-filter {
-  background-color: #AC91E6;
-  border-radius: 10px;
+  background-color: rgba(172, 145, 230, 1);
+  background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+  text-shadow: 1px 1px 1px #000;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  border-left: none;
   font-size: xx-large;
   float: left;
   width: 13.125rem;
   height: 4rem;
+  color: white;
+}
+
+.App-filter:hover {
+  background-color: rgba(193, 161, 255, 1);
+}
+
+.App-filter:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+#unabtn {
+  border-top-left-radius: 10px;
+}
+
+#shabtn{
+  border-top-right-radius: 10px;
 }
 
 .App-reportbox {
@@ -57,16 +77,20 @@
   margin-left: 1.25rem;
   margin-top: 1rem;
   font-size: 1.5rem;
-  background-color: #7F56D9;
-  opacity: 0.65;
+  background-color: rgba(172, 145, 230, 1);
+  background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   width: 50rem;
   height: 10rem;
 }
 
 .App-photo {
-  width: 12rem;
-  height: 10rem;
+  width: 11rem;
+  height: 9rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   border-radius: 10px;
   float: left;
 }
@@ -100,7 +124,7 @@
 }
 
 .App-pos {
-  width: 15rem;
+  width: 23rem;
   position: relative;
   bottom: 3rem; right: 14.5rem;
   background-color: white;
@@ -154,7 +178,10 @@
   height: 3rem;
   font-size: xx-large;
   text-decoration: none;
-  background-color: #7F56D9;
+  background-color: rgba(172, 145, 230, 1);
+  background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+  text-shadow: 1px 1px 1px #000;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
   opacity: 0.8;
   border-radius: 1rem;
   color: white;
@@ -163,5 +190,13 @@
 }
 
 #unabtn {
-  background-color: #7e53d9;
+  background-color: rgba(126, 83, 217, 1);
+}
+
+.App-bspace:hover {
+  background-color: rgba(193, 161, 255, 1);
+}
+
+.App-bspace:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }

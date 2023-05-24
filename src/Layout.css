@@ -1,5 +1,6 @@
 .Lay {
     text-align: center;
+    font-family: "myfont";
 }
 
 .Lay-header {
@@ -32,7 +33,7 @@
 
 .Lay-img {
     background-color: black;
-    border-radius: 10px;
+    border-radius: 50px;
     display: flex;
     width: 25rem;
     position: relative;
@@ -59,4 +60,41 @@
     top: 4.75rem; right: 6.25rem;
     font-size: xx-large;
     text-decoration: none;
+}
+
+.Log-input {
+    font-size: x-large;
+    margin-top: 2rem;
+}
+
+.Log-btn {
+    background-color: #AC91E6;
+    opacity: 0.65;
+    width: 12rem;
+    margin-top: 2rem;
+    font-size: x-large;
+}
+
+.Log-popdown {
+    background-color: black;
+    visibility: hidden;
+    opacity: 0.5;
+    position: absolute;
+    top: 0%; left: calc(50% - 27.5rem);
+    width: 55rem;
+    height: 60.5rem;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.Log-popup {
+    visibility: hidden;
+    width: 20rem;
+    height: 7rem;
+    padding: 1rem;
+    background-color: #D9D9D9;
+    border-radius: 6px;
+    position: absolute;
+    top: 40%; left: calc(50% - 11rem);
+    z-index: 2;
 }

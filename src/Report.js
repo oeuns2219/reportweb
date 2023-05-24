@@ -1,13 +1,18 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Report.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { database } from './firebase';
 import { ref, onValue, child, update } from 'firebase/database';
+import { codelist } from './Login';
 
 function Report() {
 
     const uid = useSelector((state) => state.user.uid);
+    var usercode = useSelector((state) => state.user.code);
+    useEffect(()=>window.localStorage.setItem('usercode', JSON.stringify(usercode)));
+    if (usercode === null) usercode = JSON.parse(window.localStorage.getItem('usercode'));
+    console.log(usercode);
     
     let report;
 
@@ -94,7 +99,27 @@ function Report() {
         pnumber.style.visibility = 'hidden';
     }
 
+    function Mychlist() {
+        
+        const cbList = codelist.filter(code => code.code !== usercode).map(code => {
+            return (
+                <div>
+                <input type="checkbox" id={code.name} className='Rep-checkbox'></input>
+                <label>{code.name}</label>
+                </div>
+            );
+        })
+
+        return (
+            <fieldset className='Rep-checklist'>
+                <legend></legend>
+                {cbList}
+            </fieldset>
+        );
+    }
+
     function MyRep() {
+        const navigate = useNavigate();
 
         return (
             <div className='Rep-report'>
@@ -106,7 +131,6 @@ function Report() {
                 <button className='Rep-accbtn' onClick={accCli}>접수하기</button>
                 <button className='Rep-resbtn' onClick={resCli}>처리완료하기</button>
                 <button className='Rep-pnumbtn' onClick={pnumCli}>전화번호</button>
-                <Link className='Rep-shabtn'>공유하기</Link>
                 <span className='Rep-pnum' id='pnum'>{report.pnumber}</span>
                 <span className='Rep-popup' id='p1'>이미 접수가 완료되었습니다.</span>
                 <span className='Rep-popup' id='p2'>먼저 접수를 해주시기 바랍니다.</span>
@@ -115,7 +139,14 @@ function Report() {
                 <div className='Rep-date'>{report.date}</div>
                 <button className='Rep-down' onClick={downCli}>&lt;</button>
                 <button className='Rep-up' onClick={upCli}>&gt;</button>
-                <Link className='Rep-bspace' to='/reportlist'>&#27;</Link>
+                <Link className='Rep-bspace' to='/home/reportlist'>&#27;</Link>
+                <div className='Rep-btncase'>
+                    <input id='btn1' className='Rep-btns' type='button' value='대공혐의점'></input>
+                    <input className='Rep-btns' type='button' value='공유 목록'></input>
+                    <input className='Rep-btns' type='button' value='조치 사항' onClick={()=>navigate('/home/reportlist/report/share')}></input>
+                    <input id='btn2' className='Rep-btns' type='button' value='신고자알림' onClick={()=>navigate('/home/reportlist/report/share1')}></input>
+                </div>
+                <Mychlist/>
             </div>
         );
     }

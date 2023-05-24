@@ -21,8 +21,10 @@
 
 .Rep-type {
     color: white;
-    background-color: #7F56D9;
-    opacity: 0.75;
+    background-color: rgba(172, 145, 230, 1);
+    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     width: 20rem;
     margin-top: 1rem;
@@ -38,13 +40,18 @@
 
 .Rep-pos {
     color: white;
-    background-color: #7F56D9;
-    opacity: 0.75;
+    background-color: rgba(172, 145, 230, 1);
+    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     width: 20rem;
+    height: 39px;
     margin-bottom: 1rem;
     position: relative;
     left: 17.5rem;
+    font-size: large;
+    line-height: 39px;
 }
 
 .Rep-date {
@@ -67,8 +74,10 @@
 
 .Rep-state {
     color: white;
-    background-color: #7F56D9;
-    opacity: 0.75;
+    background-color: rgba(172, 145, 230, 1);
+    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     width: 10rem;
     float: left;
@@ -80,32 +89,21 @@
     font-size: large;
     height: 2.5rem;
     position: relative;
-    bottom: 23.9rem; left: 21rem;
+    bottom: 23.9rem; left: 17rem;
 }
 
 .Rep-resbtn {
     font-size: large;
     height: 2.5rem;
     position: relative;
-    bottom: 23.9rem; left: 21.5rem;
-}
-
-.Rep-shabtn {
-    color: white;
-    background-color: #7F56D9;
-    opacity: 0.75;
-    border-radius: 10px;
-    font-size: xx-large;
-    position: relative;
-    top: 1rem; right: 14.25rem;
-    text-decoration: none;
+    bottom: 23.9rem; left: 17.5rem;
 }
 
 .Rep-pnumbtn {
     font-size: large;
     height: 2.5rem;
     position: relative;
-    bottom: 52.75rem; left: 16rem;
+    bottom: 52.75rem; left: 12rem;
 }
 
 .Rep-popdown {
@@ -161,10 +159,68 @@
     height: 3rem;
     font-size: xx-large;
     text-decoration: none;
-    background-color: #7F56D9;
-    opacity: 0.8;
+    background-color: rgba(172, 145, 230, 1);
+    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     border-radius: 1rem;
     color: white;
     position: absolute;
     top: calc(0% + 0.5rem); left: calc(50% - 27.5rem);
+}
+
+.Rep-bspace:hover {
+    background-color: rgba(193, 161, 255, 1);
+}
+
+.Rep-bspace:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.Rep-btncase {
+    border-radius: 10px;
+    width: 55rem;
+    height: 5rem;
+    position: absolute;
+    bottom: 0%;
+}
+
+.Rep-btns {
+    background-color: rgba(172, 145, 230, 1);
+    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    font-size: xx-large;
+    float: left;
+    width: 13.75rem;
+    height: 5rem;
+    border: 0;
+    color: white;
+}
+
+.Rep-btns:hover {
+    background-color: rgba(193, 161, 255, 1);
+}
+
+.Rep-btns:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+#btn1 {
+    border-top-left-radius: 10px;
+}
+
+#btn2 {
+    border-top-right-radius: 10px;
+}
+
+.Rep-checklist {
+    background-color: #d9d9d9;
+    width: 25rem;
+    position: absolute;
+    top: 30%; left: calc(50% - 14rem); 
+}
+
+.Rep-checkbox {
+    margin: 15px;
 }
