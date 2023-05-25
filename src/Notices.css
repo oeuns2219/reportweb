@@ -97,14 +97,14 @@
     float: left;
 }
 
-.Noti-down {
+#Noti-down {
     height: 2.5rem;
     position: relative;
     top: 0.5rem; left: 24.25rem;
     float: left;
 }
 
-.Noti-up {
+#Noti-up {
     height: 2.5rem;
     position: relative;
     top: 0.5rem; left: 26.26rem;

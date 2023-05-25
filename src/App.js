@@ -129,9 +129,9 @@ function App() {
             </div>
             {listReports}
           </div>
-          <button className='App-down' onClick={downCli}>&lt;</button>
+          <input id='App-down' className='Rep-udbtn' type='button' value='<' onClick={downCli}></input>
           <div className='App-page'>{page}</div>
-          <button className='App-up' onClick={upCli}>&gt;</button>
+          <input id='App-up' className='Rep-udbtn' type='button' value='>' onClick={upCli}></input>
           <Link className='App-bspace' to='/home'>&#27;</Link>
         </div>
       </header>

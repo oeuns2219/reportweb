@@ -50,9 +50,9 @@ function Notices () {
                     <div className='Noti-case'>
                         {Noticelist}
                     </div>
-                    <button className='Noti-down' onClick={downCli}>&lt;</button>
+                    <input id='Noti-down' className='Rep-udbtn' type='button' value='<' onClick={downCli}></input>
                     <div className='Noti-page'>{page}</div>
-                    <button className='Noti-up' onClick={upCli}>&gt;</button>
+                    <input id='Noti-up' className='Rep-udbtn' type='button' value='>' onClick={upCli}></input>
                     <input type='button' className='Noti-write' onClick={()=>navigate('/home/noticelist/write')} value='공지사항 쓰기'></input>
                     <Link className='Noti-bspace' to='/home'>&#27;</Link>
                 </div>
