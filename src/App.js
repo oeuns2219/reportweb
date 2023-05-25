@@ -94,7 +94,6 @@ function App() {
   });
   useEffect(() => window.localStorage.setItem('reports', JSON.stringify(reports)));
   if (reports.length === 0) reports = JSON.parse(window.localStorage.getItem('reports'));
-
   const filtered = statelist.includes(state) ? reports.filter(report => report.state === state) : reports.filter(reports => JSON.parse(reports.shareList).includes(usercode));
 
   const listReports = filtered.slice((page-1)*4,page*4).map(report => {

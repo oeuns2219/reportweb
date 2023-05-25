@@ -12,7 +12,6 @@ function Report() {
     var usercode = useSelector((state) => state.user.code);
     useEffect(()=>window.localStorage.setItem('usercode', JSON.stringify(usercode)));
     if (usercode === null) usercode = JSON.parse(window.localStorage.getItem('usercode'));
-    console.log(usercode);
     
     let report;
 
@@ -23,7 +22,6 @@ function Report() {
     });
 
     if (report == null) report = JSON.parse(window.localStorage.getItem('report'));
-
     window.localStorage.setItem('report', JSON.stringify(report));
     
     const [state, setState] = useState(report.state);
@@ -100,20 +98,40 @@ function Report() {
     }
 
     function Mychlist() {
+
+        function saveCli() {
+            const shareList = [];
+            for (const code of codelist.filter(code => code.code !== usercode)) {
+                if (document.getElementById(code.name).checked) shareList.push(code.code);
+            }
+            if (report == null) report = JSON.parse(window.localStorage.getItem('report'));
+            if (JSON.parse(report.shareList).includes(usercode)) shareList.push(usercode);
+            report.shareList = JSON.stringify(shareList);
+            const updates = {};
+            updates['/reports/' + report.uid] = report;
+            update(ref(database), updates);
+
+            document.getElementById('checklist').style.visibility='hidden';
+        }
         
         const cbList = codelist.filter(code => code.code !== usercode).map(code => {
+            
+            var checked = false;
+            if (JSON.parse(report.shareList).includes(code.code)) checked = true;
+
             return (
                 <div>
-                <input type="checkbox" id={code.name} className='Rep-checkbox'></input>
+                <input type="checkbox" id={code.name} className='Rep-checkbox' defaultChecked={checked}></input>
                 <label>{code.name}</label>
                 </div>
             );
         })
 
         return (
-            <fieldset className='Rep-checklist'>
+            <fieldset id='checklist' className='Rep-checklist'>
                 <legend></legend>
                 {cbList}
+                <button className='Rep-savebtn' onClick={saveCli}>저장하기</button>
             </fieldset>
         );
     }
@@ -128,21 +146,21 @@ function Report() {
                 <div className='Rep-pos'>{report.position}</div>
                 <div className='Rep-detail'>{report.detail}</div>
                 <div className='Rep-state'>{state}</div>
-                <button className='Rep-accbtn' onClick={accCli}>접수하기</button>
-                <button className='Rep-resbtn' onClick={resCli}>처리완료하기</button>
-                <button className='Rep-pnumbtn' onClick={pnumCli}>전화번호</button>
+                <input id='accbtn' className='Rep-pbtns' type='button' value='접수하기' onClick={accCli}></input>
+                <input id='combtn' className='Rep-pbtns' type='button' value='처리완료하기' onClick={resCli}></input>
+                <input id='pnumbtn' className='Rep-pbtns' type='button' value='전화번호' onClick={pnumCli}></input>
                 <span className='Rep-pnum' id='pnum'>{report.pnumber}</span>
                 <span className='Rep-popup' id='p1'>이미 접수가 완료되었습니다.</span>
                 <span className='Rep-popup' id='p2'>먼저 접수를 해주시기 바랍니다.</span>
                 <span className='Rep-popup' id='p3'>이미 처리가 완료되었습니다.</span>
                 <div className='Rep-popdown' id='pd' onClick={pdCli}></div>
                 <div className='Rep-date'>{report.date}</div>
-                <button className='Rep-down' onClick={downCli}>&lt;</button>
-                <button className='Rep-up' onClick={upCli}>&gt;</button>
+                <input id='Rep-down' className='Rep-udbtn' type='button' value='<' onClick={downCli}></input>
+                <input id='Rep-up' type='button' className='Rep-udbtn' value='>' onClick={upCli}></input>
                 <Link className='Rep-bspace' to='/home/reportlist'>&#27;</Link>
                 <div className='Rep-btncase'>
                     <input id='btn1' className='Rep-btns' type='button' value='대공혐의점'></input>
-                    <input className='Rep-btns' type='button' value='공유 목록'></input>
+                    <input className='Rep-btns' type='button' value='공유 목록' onClick={()=>document.getElementById('checklist').style.visibility='visible'}></input>
                     <input className='Rep-btns' type='button' value='조치 사항' onClick={()=>navigate('/home/reportlist/report/share')}></input>
                     <input id='btn2' className='Rep-btns' type='button' value='신고자알림' onClick={()=>navigate('/home/reportlist/report/share1')}></input>
                 </div>

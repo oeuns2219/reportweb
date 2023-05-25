@@ -42,8 +42,9 @@
     margin-left: 1.25rem;
     margin-top: 2rem;
     font-size: 1.5rem;
-    background-color: #7F56D9;
-    opacity: 0.65;
+    background-color: rgba(172, 145, 230, 1);
+    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     width: 50rem;
     height: 6.5rem;
@@ -56,7 +57,7 @@
     border-radius: 10px;
     width: 17rem;
     position: relative;
-    top: 10%; left: 1.5%;
+    top: 30%; left: 45%;
 }
 
 .Noti-cont {
@@ -65,13 +66,22 @@
     width: 48rem;
     height: 2rem;
     position: relative;
-    top: 30%; left: 1.5%;
+    top: 10%; left: 1.5%;
 }
 
 .Noti-link {
     width: 8rem;
     position: relative;
-    bottom: 3.32rem; left: 40rem;
+    bottom: 0rem; left: 41rem;
+    float: left;
+    text-decoration: none;
+    color: black;
+}
+
+.Bty-link {
+    width: 8rem;
+    position: relative;
+    bottom: 2rem; left: 41rem;
     float: left;
     text-decoration: none;
     color: black;
@@ -102,14 +112,18 @@
 }
 
 .Noti-write {
-    background-color: #7F56D9;
-    opacity: 0.65;
+    background-color: rgba(172, 145, 230, 1);
+    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 1px #000;
     border-radius: 10px;
-    width: 8rem;
+    width: 13rem;
     position: relative;
-    top: 0.5rem; left: 18rem;
+    top: 0.5rem; left: 17.5rem;
     text-decoration: none;
     color: white;
+    font-size: x-large;
+    border: none;
 }
 
 .Noti-bspace {
@@ -117,10 +131,36 @@
     height: 3rem;
     font-size: xx-large;
     text-decoration: none;
-    background-color: #7F56D9;
-    opacity: 0.8;
+    background-color: rgba(172, 145, 230, 1);
+    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 1px #000;
     border-radius: 1rem;
     color: white;
     position: absolute;
-    top: calc(0% + 0.5rem); left: calc(50% - 27.25rem);
+    top: calc(0% + 0.5rem); left: calc(50% - 27.5rem);
+}
+
+.Noti-bspace:hover {
+    background-color: rgba(193, 161, 255, 1);
+}
+
+.Noti-bspace:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.Noti-write:hover {
+    background-color: rgba(193, 161, 255, 1);
+}
+
+.Noti-write:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.Bty-pos {
+    background-color: white;
+    border-radius: 10px;
+    width: 20rem;
+    position: relative;
+    bottom: 0.05rem; left: 1.5%;
 }

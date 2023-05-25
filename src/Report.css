@@ -85,23 +85,37 @@
     bottom: calc(24rem - 9px); left: 1rem;
 }
 
-.Rep-accbtn {
+.Rep-pbtns {
+    border: none;
     font-size: large;
     height: 2.5rem;
+    color: white;
+    background-color: rgba(172, 145, 230, 1);
+    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.Rep-pbtns:hover {
+    background-color: rgba(193, 161, 255, 1);
+}
+
+.Rep-pbtns:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+#accbtn {
     position: relative;
     bottom: 23.9rem; left: 17rem;
 }
 
-.Rep-resbtn {
-    font-size: large;
-    height: 2.5rem;
+#combtn {
     position: relative;
     bottom: 23.9rem; left: 17.5rem;
 }
 
-.Rep-pnumbtn {
-    font-size: large;
-    height: 2.5rem;
+#pnumbtn {
     position: relative;
     bottom: 52.75rem; left: 12rem;
 }
@@ -140,18 +154,34 @@
     z-index: 2;
 }
 
-.Rep-down {
+.Rep-udbtn {
+    color: white;
+    border: none;
+    border-radius: 1.25rem;
+    background-color: rgba(172, 145, 230, 1);
+    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     height: 2.5rem;
-    position: absolute;
-    top: 24%; right: calc(50% + 25rem);
     float: left;
 }
 
-.Rep-up {
-    height: 2.5rem;
+.Rep-udbtn:hover {
+    background-color: rgba(193, 161, 255, 1);
+}
+
+.Rep-udbtn:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+#Rep-down {
+    position: absolute;
+    top: 24%; right: calc(50% + 25rem);
+}
+
+#Rep-up {
     position: absolute;
     top: 24%; left: calc(50% + 25rem);
-    float: left;
 }
 
 .Rep-bspace {
@@ -219,8 +249,14 @@
     width: 25rem;
     position: absolute;
     top: 30%; left: calc(50% - 14rem); 
+    visibility: hidden;
 }
 
 .Rep-checkbox {
     margin: 15px;
+}
+
+.Rep-savebtn {
+    margin-top: 2rem;
+    font-size: x-large;
 }

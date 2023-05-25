@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Notices.css';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -10,6 +10,7 @@ function Notices () {
 
     const [page, setPage] = useState(1);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     function notiCli(evt) {
         dispatch(setuid(evt.target.parentElement.id));
@@ -35,8 +36,8 @@ function Notices () {
 
     const Noticelist = notices.slice((page-1)*6,page*6).map(notice =>
         <article className='Noti-noti' id={notice.uid}>
-            <section className='Noti-date'>{notice.date}</section>
             <section className='Noti-cont'>{(notice.title.length > 30 ? notice.title.substring(0,30)+'...' : notice.title)}</section>
+            <section className='Noti-date'>{notice.date}</section>
             <Link to='/home/noticelist/notice' className='Noti-link' onClick={notiCli}>자세히 보기</Link>
         </article>
     )
@@ -52,7 +53,7 @@ function Notices () {
                     <button className='Noti-down' onClick={downCli}>&lt;</button>
                     <div className='Noti-page'>{page}</div>
                     <button className='Noti-up' onClick={upCli}>&gt;</button>
-                    <Link to='/home/noticelist/write' className='Noti-write'>공지사항 쓰기</Link>
+                    <input type='button' className='Noti-write' onClick={()=>navigate('/home/noticelist/write')} value='공지사항 쓰기'></input>
                     <Link className='Noti-bspace' to='/home'>&#27;</Link>
                 </div>
             </header>

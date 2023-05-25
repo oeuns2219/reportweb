@@ -14,6 +14,9 @@ import Write from './Write';
 import Login from './Login';
 import Share from './Share';
 import Share1 from './Share2';
+import Bounties from './Bounties';
+import Bounty from './Bounty';
+import Bwrite from './Bwrite';
 
 class Routing extends React.Component {
   render() {
@@ -29,6 +32,9 @@ class Routing extends React.Component {
           <Route exact path='/home/reportlist/report' element={<Report />}/>
           <Route exact path='/home/reportlist/report/share' element={<Share />}/>
           <Route exact path='/home/reportlist/report/share1' element={<Share1 />}/>
+          <Route exact path='/home/bountylist' element={<Bounties />}/>
+          <Route exact path='/home/bountylist/bounty' element={<Bounty />}/>
+          <Route exact path='/home/bountylist/write' element={<Bwrite />}/>
         </Routes>
       </Router>
     )

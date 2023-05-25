@@ -34,7 +34,7 @@ function Share () {
             <div className='Sha-process'>
                 <div className='Sha-title'>조치 사항</div>
                 <div className='Sha-content'>
-                    <textarea id='content' placeholder='조치 사항을 적어주세요.' className='Sha-input'>{report.processText}</textarea>
+                    <textarea id='content' placeholder='조치 사항을 적어주세요.' className='Sha-input' defaultValue={report.processText}></textarea>
                 </div>
                 <button className='Sha-btn' onClick={btnCli}>저장하기</button>
                 <span className='Sha-popup' id='pu'>저장이 완료되었습니다.</span>

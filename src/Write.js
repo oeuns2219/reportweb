@@ -6,8 +6,9 @@ import { ref, push, set, child } from 'firebase/database';
 function Write () {
 
     const notice = {};
+    const date = new Date(Date.now())
 
-    notice['date'] = new Date(Date.now()).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
+    notice['date'] = date.toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' }) + ' ' + date.toLocaleTimeString('en-GB', { timeZone: 'Asia/Seoul' });
 
     function btnCli() {
         const notiref = child(ref(database), 'notices');
@@ -37,7 +38,7 @@ function Write () {
                 <button className='Wrt-btn' onClick={btnCli}>등록하기</button>
                 <span className='Wrt-popup' id='pu'>공지사항이 등록되었습니다.</span>
                 <Link to='/home/noticelist' className='Wrt-popdown' id='pd'></Link>
-                <Link className='Wrt-bspace' to='/home/noticelist'>&#27;</Link>
+                <Link className='App-bspace' to='/home/noticelist'>&#27;</Link>
             </div>
         );
     }

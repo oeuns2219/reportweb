@@ -22,7 +22,11 @@
 }
 
 .Lay-title {
-    background-color: white;
+    background-color: rgba(172, 145, 230, 1);
+    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    color: white;
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
@@ -40,26 +44,41 @@
     left: 2.5rem;
 }
 
-.Lay-notibtn {
-    color: black;
-    background-color: white;
-    opacity: 0.75;
+.Lay-btns {
+    background-color: rgba(172, 145, 230, 1);
+    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    color: white;
     border-radius: 10px;
-    position: relative;
-    top: 1rem; left: 6.25rem;
-    font-size: xx-large;
+    font-size: x-large;
     text-decoration: none;
+    width: 13rem;
+    text-align: center;
+    border: none;
 }
 
-.Lay-repbtn {
-    color: black;
-    background-color: white;
-    opacity: 0.75;
-    border-radius: 10px;
+.Lay-btns:hover {
+    background-color: rgba(193, 161, 255, 1);
+}
+
+.Lay-btns:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+#Lay-notibtn {
     position: relative;
-    top: 4.75rem; right: 6.25rem;
-    font-size: xx-large;
-    text-decoration: none;
+    top: 1rem; left: 6.6rem;
+}
+
+#Lay-repbtn {
+    position: relative;
+    top: 4.75rem; right: 6.6rem;
+}
+
+#Lay-btybtn {
+    position: relative;
+    top: 6.1rem;
 }
 
 .Log-input {
@@ -67,9 +86,7 @@
     margin-top: 2rem;
 }
 
-.Log-btn {
-    background-color: #AC91E6;
-    opacity: 0.65;
+#Log-btn {
     width: 12rem;
     margin-top: 2rem;
     font-size: x-large;
@@ -97,4 +114,27 @@
     position: absolute;
     top: 40%; left: calc(50% - 11rem);
     z-index: 2;
+}
+
+.Lay-bspace {
+    width: 3rem;
+    height: 3rem;
+    font-size: xx-large;
+    text-decoration: none;
+    background-color: rgba(172, 145, 230, 1);
+    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+    color: white;
+    position: absolute;
+    top: 10%; left: calc(50% - 15rem);
+}
+
+.Lay-bspace:hover {
+    background-color: rgba(193, 161, 255, 1);
+}
+
+.Lay-bspace:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
