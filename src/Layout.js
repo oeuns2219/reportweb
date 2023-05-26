@@ -1,4 +1,4 @@
-import PIc from './assets/PIc.png'
+import logo from './assets/logo.png'
 import { Link, useNavigate } from 'react-router-dom';
 import './Layout.css';
 import { codelist } from './Login';
@@ -96,7 +96,7 @@ function Layout () {
             <header className="Lay-header">
                 <div className='Lay-lay'>
                     <div className='Lay-title'>육군 주민신고 사이트<br></br>&#40;{codeobj[0].name}&#41;</div>
-                    <img className="Lay-img" src={PIc} alt="51"></img>
+                    <img className="Lay-img" src={logo} alt="51"></img>
                     <input id='Lay-notibtn' className='Lay-btns' onClick={() => navigate('/home/noticelist')} defaultValue='공지사항 목록'></input>
                     <input id='Lay-repbtn' className='Lay-btns' onClick={repCli} defaultValue='주민신고 목록'></input>
                     <input id='Lay-btybtn' className='Lay-btns' onClick={() => navigate('/home/bountylist')} defaultValue='수배 현황'></input>

@@ -37,7 +37,7 @@
 
 .Lay-img {
     background-color: black;
-    border-radius: 50px;
+    border-radius: 10px;
     display: flex;
     width: 25rem;
     position: relative;

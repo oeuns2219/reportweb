@@ -1,4 +1,4 @@
-import PIc from './assets/PIc.png'
+import logo from './assets/logo.png'
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setcode } from './reducers/user';
@@ -68,7 +68,7 @@ function Login () {
             <header className="Lay-header">
                 <div className='Lay-lay'>
                     <div className='Lay-title'>육군 주민신고 사이트<br></br>&#40;관리자 모드&#41;</div>
-                    <img className="Lay-img" src={PIc} alt="51"></img>
+                    <img className="Lay-img" src={logo} alt="51"></img>
                     <textarea id='code' rows='1' cols='27' placeholder='관리자 코드를 입력해주세요.' className='Log-input'></textarea>
                     <input type='button' id='Log-btn' className='Lay-btns' onClick={btnCli} value='로그인하기'></input>
                     <span className='Log-popup' id='pu1'>유효하지 않은<br></br>관리자 코드입니다.</span>
