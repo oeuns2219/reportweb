@@ -89,10 +89,10 @@
 
 .Noti-page {
     background-color: white;
-    width: 2rem;
+    width: 3rem;
     height: 2.5rem;
     position: relative;
-    top: 0.5rem; left: 25.25rem;
+    top: 0.5rem; left: 23.5rem;
     border-radius: 5px;
     float: left;
 }
@@ -100,14 +100,14 @@
 #Noti-down {
     height: 2.5rem;
     position: relative;
-    top: 0.5rem; left: 24.25rem;
+    top: 0.5rem; left: 22rem;
     float: left;
 }
 
 #Noti-up {
     height: 2.5rem;
     position: relative;
-    top: 0.5rem; left: 26.26rem;
+    top: 0.5rem; left: 25rem;
     float: left;
 }
 
@@ -119,7 +119,7 @@
     border-radius: 10px;
     width: 13rem;
     position: relative;
-    top: 0.5rem; left: 17.5rem;
+    top: 0.5rem; left: 16rem;
     text-decoration: none;
     color: white;
     font-size: x-large;

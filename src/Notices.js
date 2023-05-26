@@ -76,7 +76,7 @@ function Notices () {
                         {Noticelist}
                     </div>
                     <input id='Noti-down' className='Rep-udbtn' type='button' value='<' onClick={downCli}></input>
-                    <div className='Noti-page'>{page}</div>
+                    <div className='Noti-page'>{page}/{1 + (notices.length - notices.length%6)/6}</div>
                     <input id='Noti-up' className='Rep-udbtn' type='button' value='>' onClick={upCli}></input>
                     <input type='button' className='Noti-write' onClick={()=>navigate('/home/noticelist/write')} value='공지사항 쓰기'></input>
                     <Link className='Noti-bspace' to='/home'>&#27;</Link>

@@ -161,7 +161,7 @@ function App() {
             {listReports}
           </div>
           <input id='App-down' className='Rep-udbtn' type='button' value='<' onClick={downCli}></input>
-          <div className='App-page'>{page}</div>
+          <div className='App-page'>{page}/{1 + (filtered.length - filtered.length%4)/4}</div>
           <input id='App-up' className='Rep-udbtn' type='button' value='>' onClick={upCli}></input>
           <Link className='App-bspace' to='/home'>&#27;</Link>
         </div>

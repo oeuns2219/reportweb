@@ -80,7 +80,7 @@ function Bounties () {
                         {Bountylist}
                     </div>
                     <input id='Noti-down' className='Rep-udbtn' type='button' value='<' onClick={downCli}></input>
-                    <div className='Noti-page'>{page}</div>
+                    <div className='Noti-page'>{page}/{1 + (bounties.length - bounties.length%6)/6}</div>
                     <input id='Noti-up' className='Rep-udbtn' type='button' value='>' onClick={upCli}></input>
                     <input type='button' className='Noti-write' onClick={()=>navigate('/home/bountylist/write')} value='수배하기'></input>
                     <Link className='Noti-bspace' to='/home'>&#27;</Link>

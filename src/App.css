@@ -151,22 +151,22 @@
 
 .App-page {
   background-color: white;
-  width: 2rem;
+  width: 3rem;
   height: 2.5rem;
   position: relative;
-  top: 0.5rem; left: 25.25rem;
+  top: 0.5rem; left: 24rem;
   border-radius: 5px;
   float: left;
 }
 
 #App-down {
   position: relative;
-  top: 0.5rem; left: 24.25rem;
+  top: 0.5rem; left: 23rem;
 }
 
 #App-up {
   position: relative;
-  top: 0.5rem; left: 26.26rem;
+  top: 0.5rem; left: 25rem;
 }
 
 .App-bspace {
