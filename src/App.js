@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { setuid, setcode } from './reducers/user';
 import { database } from './firebase';
-import { ref, child, onChildAdded } from 'firebase/database';
+import { ref, child, onChildAdded, onChildRemoved, onChildChanged } from 'firebase/database';
 
-//let reports = [];
-//const reportRef = child(ref(database), "reports");
+let reports = [];
+const repref = child(ref(database), "reports");
 const statelist = ['미접수', '처리중', '처리완료'];
 
 function App() {
 
   const [state, setState] = useState('미접수');
   const [page, setPage] = useState(1);
-  //const [dummy, setDummy] = useState(1);
+  const [dummy, setDummy] = useState(1);
   var usercode = useSelector((state) => state.user.code);
   const dispatch = useDispatch();
 
@@ -78,22 +78,53 @@ function App() {
   function upCli() {
     if (reports.filter(report => report.state === state).length > page*4) setPage(page+1);
   }
+
+  //var reports = [];
+
+  //const repref = child(ref(database), 'reports');
+
 /*
-  useEffect(()=>onChildAdded(reportRef, (snapshot) => {
-    reports.unshift(snapshot.val())
-    setTimeout(setDummy(dummy+1), 10000);
-  }), []);*/
-
-  var reports = [];
-
-  const repref = child(ref(database), 'reports');
-
-
   onChildAdded(repref, (snapshot) => {
     reports.unshift(snapshot.val());
   });
   useEffect(() => window.localStorage.setItem('reports', JSON.stringify(reports)));
-  if (reports.length === 0) reports = JSON.parse(window.localStorage.getItem('reports'));
+  if (reports.length === 0) reports = JSON.parse(window.localStorage.getItem('reports'));*/
+  useEffect(() => {
+    onChildAdded(repref, (snapshot) => {
+        async function listupdate() {
+            if (reports.every((report) => report.uid !== snapshot.val().uid)) reports.unshift(snapshot.val());
+            return reports;
+        }
+        listupdate().then((result) => {
+            setDummy(result.length);
+        });
+    });
+    onChildRemoved(repref, (snapshot) => {
+        async function listupdate() {
+            reports = reports.filter((report) => report.uid !== snapshot.key);
+            return reports;
+        }
+        listupdate().then((result) => {
+            setDummy(result.length);
+        });
+    });/*
+    onChildChanged(repref, (snapshot) => {
+      async function listupdate() {
+          reports.map((report) => {
+            if (report.uid === snapshot.uid) {
+              if (report.state === '미접수') report.state = '처리중';
+              else report.state = '처리완료';
+              return report;
+            }
+            return report;
+          });
+          return reports;
+      }
+      listupdate().then((result) => {
+          setDummy(result.filter(report => report.state !== '처리중').length);
+      });
+    });*/
+  }, []);
   const filtered = statelist.includes(state) ? reports.filter(report => report.state === state) : reports.filter(reports => JSON.parse(reports.shareList).includes(usercode));
 
   const listReports = filtered.slice((page-1)*4,page*4).map(report => {

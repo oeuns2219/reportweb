@@ -4,11 +4,15 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setuid } from './reducers/user'
 import { database } from './firebase';
-import { ref, child, onChildAdded } from 'firebase/database';
+import { ref, child, onChildAdded, onChildRemoved } from 'firebase/database';
+
+let bounties = [];
+const bounref = child(ref(database), 'bounties');
 
 function Bounties () {
 
     const [page, setPage] = useState(1);
+    const [dummy, setDummy] = useState(1);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -24,16 +28,40 @@ function Bounties () {
         if (bounties.length > page*6) setPage(page+1);
     }
 
-    var bounties = [];
+    //var bounties = [];
 
-    const bounref = child(ref(database), 'bounties');
+    //const bounref = child(ref(database), 'bounties');
+    useEffect(() => {
+        onChildAdded(bounref, (snapshot) => {
+            async function listupdate() {
+                if (bounties.every((bounty) => bounty.uid !== snapshot.val().uid)) bounties.unshift(snapshot.val());
+                return bounties;
+            }
+            listupdate().then((result) => {
+                setDummy(result.length);
+            });
+        });
+        onChildRemoved(bounref, (snapshot) => {
+            async function listupdate() {
+                bounties = bounties.filter((bounty) => bounty.uid !== snapshot.key);
+                return bounties;
+            }
+            listupdate().then((result) => {
+                setDummy(result.length);
+            });
+        });
+    }, []);
+    /*
     onChildAdded(bounref, (snapshot) => {
-       bounties.unshift(snapshot.val());
+        bounties.unshift(snapshot.val());
+    });
+    onChildRemoved(bounref, (snapshot) => {
+        bounties = bounties.filter((bounty) => bounty.uid !== snapshot.uid);
     });
 
     useEffect(()=>window.localStorage.setItem('bounties', JSON.stringify(bounties)));
     if (bounties.length === 0) bounties = JSON.parse(window.localStorage.getItem('bounties'));
-
+*/
     const Bountylist = bounties.slice((page-1)*6,page*6).map(bounty =>
         <article className='Noti-noti' id={bounty.uid}>
             <section className='Noti-cont'>{(bounty.title.length > 30 ? bounty.title.substring(0,30)+'...' : bounty.title)}</section>

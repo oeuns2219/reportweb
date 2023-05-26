@@ -1,12 +1,14 @@
 import './Notice.css';
 import { useSelector } from 'react-redux';
 import { database } from './firebase';
-import { ref, onValue, child } from 'firebase/database';
+import { ref, onValue, child, update } from 'firebase/database';
 import { Link } from 'react-router-dom';
 
 function Bounty() {
 
-    const uid = useSelector((state) => state.user.uid);
+    var uid = useSelector((state) => state.user.uid);
+    if (uid == null) uid = JSON.parse(window.localStorage.getItem('uid'));
+    window.localStorage.setItem('uid', JSON.stringify(uid));
 
     let bounty;
 
@@ -16,8 +18,19 @@ function Bounty() {
     })
     
     if (bounty == null) bounty = JSON.parse(window.localStorage.getItem('bounty'));
-
     window.localStorage.setItem('bounty', JSON.stringify(bounty));
+
+    function btnCli() {
+        if (uid == null) uid = JSON.parse(window.localStorage.getItem('uid'));
+        const updates = {};
+        updates['/bounties/' + uid] = null;
+        update(ref(database), updates);
+
+        var popup = document.getElementById('pu');
+        var popd = document.getElementById('pd');
+        popd.style.visibility = 'visible';
+        popup.style.visibility = 'visible';
+    }
 
     function MyBty() {
         return (
@@ -27,6 +40,9 @@ function Bounty() {
                 <div className='Bty-pos2'>수배 지역: {bounty.pos}</div>
                 <div className='Not-date'>{bounty.date}</div>
                 <div className='Not-content'>{bounty.content}</div>
+                <button className='Wrt-btn' onClick={btnCli}>삭제하기</button>
+                <span className='Wrt-popup' id='pu'>수배가 삭제되었습니다.</span>
+                <Link to='/home/bountylist' className='Wrt-popdown' id='pd'></Link>
                 <Link className='App-bspace' to='/home/bountylist'>&#27;</Link>
             </div>
         );

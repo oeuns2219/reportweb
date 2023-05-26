@@ -4,11 +4,15 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setuid } from './reducers/user'
 import { database } from './firebase';
-import { ref, child, onChildAdded } from 'firebase/database';
+import { ref, child, onChildAdded, onChildRemoved } from 'firebase/database';
+
+let notices = [];
+const notiref = child(ref(database), 'notices');
 
 function Notices () {
 
     const [page, setPage] = useState(1);
+    const [dummy, setDummy] = useState(1);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -23,7 +27,7 @@ function Notices () {
     function upCli() {
         if (notices.length > page*6) setPage(page+1);
     }
-
+/*
     var notices = [];
 
     const notiref = child(ref(database), 'notices');
@@ -33,6 +37,27 @@ function Notices () {
 
     useEffect(()=>window.localStorage.setItem('notices', JSON.stringify(notices)));
     if (notices.length === 0) notices = JSON.parse(window.localStorage.getItem('notices'));
+*/
+    useEffect(() => {
+        onChildAdded(notiref, (snapshot) => {
+            async function listupdate() {
+                if (notices.every((notice) => notice.uid !== snapshot.val().uid)) notices.unshift(snapshot.val());
+                return notices;
+            }
+            listupdate().then((result) => {
+                setDummy(result.length);
+            });
+        });
+        onChildRemoved(notiref, (snapshot) => {
+            async function listupdate() {
+                notices = notices.filter((notice) => notice.uid !== snapshot.key);
+                return notices;
+            }
+            listupdate().then((result) => {
+                setDummy(result.length);
+            });
+        });
+    }, []);
 
     const Noticelist = notices.slice((page-1)*6,page*6).map(notice =>
         <article className='Noti-noti' id={notice.uid}>
