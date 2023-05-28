@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { setuid, setcode } from './reducers/user';
 import { database } from './firebase';
-import { ref, child, onChildAdded, onChildRemoved, onChildChanged } from 'firebase/database';
+import { ref, child, onChildAdded, onChildRemoved, onChildChanged, get } from 'firebase/database';
 
 let reports = [];
 const repref = child(ref(database), "reports");
@@ -14,7 +14,9 @@ function App() {
 
   const [state, setState] = useState('미접수');
   const [page, setPage] = useState(1);
-  const [dummy, setDummy] = useState(1);
+  const [dummy, setDummy] = useState(0);
+  const [sdum, setSdum] = useState(0);
+  const [ldum, setLdum] = useState(0);
   var usercode = useSelector((state) => state.user.code);
   const dispatch = useDispatch();
 
@@ -92,38 +94,39 @@ function App() {
   useEffect(() => {
     onChildAdded(repref, (snapshot) => {
         async function listupdate() {
-            if (reports.every((report) => report.uid !== snapshot.val().uid)) reports.unshift(snapshot.val());
-            return reports;
+          if (reports.every((report) => report.uid !== snapshot.val().uid)) reports.unshift(snapshot.val());
+          return reports;
         }
         listupdate().then((result) => {
-            setDummy(result.length);
+          setDummy(result.length);
         });
     });
     onChildRemoved(repref, (snapshot) => {
         async function listupdate() {
-            reports = reports.filter((report) => report.uid !== snapshot.key);
-            return reports;
+          reports = reports.filter((report) => report.uid !== snapshot.key);
+          return reports;
         }
         listupdate().then((result) => {
-            setDummy(result.length);
+          setDummy(result.length);
         });
-    });/*
+    });
     onChildChanged(repref, (snapshot) => {
       async function listupdate() {
-          reports.map((report) => {
-            if (report.uid === snapshot.uid) {
-              if (report.state === '미접수') report.state = '처리중';
-              else report.state = '처리완료';
-              return report;
-            }
+        reports.map((report) => {
+          if (report.uid === snapshot.key) {
+            report.state = snapshot.val().state;
+            report.shareList = snapshot.val().shareList;
             return report;
-          });
-          return reports;
+          }
+          return report;
+        });
+        return reports;
       }
       listupdate().then((result) => {
-          setDummy(result.filter(report => report.state !== '처리중').length);
+        setSdum(result.filter(report => report.state !== '처리중').length);
+        setLdum(result.filter(report => JSON.parse(report.shareList).includes(usercode)).length);
       });
-    });*/
+    });
   }, []);
   const filtered = statelist.includes(state) ? reports.filter(report => report.state === state) : reports.filter(reports => JSON.parse(reports.shareList).includes(usercode));
 
@@ -161,7 +164,7 @@ function App() {
             {listReports}
           </div>
           <input id='App-down' className='Rep-udbtn' type='button' value='<' onClick={downCli}></input>
-          <div className='App-page'>{page}/{1 + (filtered.length - filtered.length%4)/4}</div>
+          <div className='App-page'>{page}/{1 + ((filtered.length - 1) - (filtered.length - 1)%4)/4}</div>
           <input id='App-up' className='Rep-udbtn' type='button' value='>' onClick={upCli}></input>
           <Link className='App-bspace' to='/home'>&#27;</Link>
         </div>
