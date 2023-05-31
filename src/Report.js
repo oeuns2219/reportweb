@@ -143,7 +143,7 @@ function Report() {
             <div className='Rep-report'>
                 <div className='Rep-type'>{report.type}</div>
                 <img className='Rep-photo' src={photolist[page]} id='photo' alt='report'/>
-                <div className='Rep-pos'>{report.position}</div>
+                <input className='Rep-pos' type='button' value={report.position} onClick={()=>navigate('/home/reportlist/report/mapview')}></input>
                 <div className='Rep-detail'>{report.detail}</div>
                 <div className='Rep-state'>{state}</div>
                 <input id='accbtn' className='Rep-pbtns' type='button' value='접수하기' onClick={accCli}></input>

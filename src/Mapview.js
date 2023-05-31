@@ -1,8 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import './Mapview.css';
 
 const google = window.google
 
 function Mapview () {
+
+    const navigate = useNavigate();
     let map;
 
     function initMap() {
