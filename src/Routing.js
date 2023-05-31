@@ -17,6 +17,7 @@ import Share1 from './Share2';
 import Bounties from './Bounties';
 import Bounty from './Bounty';
 import Bwrite from './Bwrite';
+import Mapview from './Mapview';
 
 class Routing extends React.Component {
   render() {
@@ -30,6 +31,7 @@ class Routing extends React.Component {
           <Route exact path='/home/noticeList/write' element={<Write />}/>
           <Route exact path='/home/reportlist' element={<App />}/>
           <Route exact path='/home/reportlist/report' element={<Report />}/>
+          <Route exact path='/home/reportlist/report/mapview' element={<Mapview />}/>
           <Route exact path='/home/reportlist/report/share' element={<Share />}/>
           <Route exact path='/home/reportlist/report/share1' element={<Share1 />}/>
           <Route exact path='/home/bountylist' element={<Bounties />}/>
