@@ -3,7 +3,7 @@
 }
 
 .Noti-header {
-    background-color: white;
+    background-color: #fbfcf5;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -14,14 +14,15 @@
 }
 
 .Noti-notibox {
-    background: linear-gradient(#AC91E6 , white, #AC91E6);
+    background: linear-gradient(#23c686 , white, #23c686);
     width: 55rem;
     height: 60.5rem;
 }
 
 .Noti-title {
+    font-family: 'SUITE-Regular';
     margin-bottom: 2rem;
-    background-color: white;
+    background-color: #fbfcf5;
     border-radius: 10px;
     width: 20rem;
     font-size: xx-large;
@@ -30,7 +31,8 @@
 }
 
 .Noti-case {
-    background-color: white;
+    font-family: 'SUITE-Regular';
+    background-color: #fbfcf5;
     border-radius: 10px;
     width: 52.5rem;
     height: 51.5rem;
@@ -42,8 +44,8 @@
     margin-left: 1.25rem;
     margin-top: 2rem;
     font-size: 1.5rem;
-    background-color: rgba(172, 145, 230, 1);
-    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    background-color: rgba(35, 198, 134, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     width: 50rem;
@@ -53,7 +55,7 @@
 }
 
 .Noti-date {
-    background-color: white;
+    background-color: #fbfcf5;
     border-radius: 10px;
     width: 17rem;
     position: relative;
@@ -61,7 +63,7 @@
 }
 
 .Noti-cont {
-    background-color: white;
+    background-color: #fbfcf5;
     border-radius: 10px;
     width: 48rem;
     height: 2rem;
@@ -88,7 +90,8 @@
 }
 
 .Noti-page {
-    background-color: white;
+    font-family: 'SUITE-Regular';
+    background-color: #fbfcf5;
     width: 3rem;
     height: 2.5rem;
     position: relative;
@@ -112,8 +115,9 @@
 }
 
 .Noti-write {
-    background-color: rgba(172, 145, 230, 1);
-    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    font-family: 'SUITE-Regular';
+    background-color: rgba(35, 198, 134, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     text-shadow: 1px 1px 1px #000;
     border-radius: 10px;
@@ -131,8 +135,8 @@
     height: 3rem;
     font-size: xx-large;
     text-decoration: none;
-    background-color: rgba(172, 145, 230, 1);
-    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    background-color: rgba(35, 198, 134, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     text-shadow: 1px 1px 1px #000;
     border-radius: 1rem;
@@ -142,7 +146,7 @@
 }
 
 .Noti-bspace:hover {
-    background-color: rgba(193, 161, 255, 1);
+    background-color: rgba(43, 238, 160, 1);
 }
 
 .Noti-bspace:active {
@@ -150,7 +154,7 @@
 }
 
 .Noti-write:hover {
-    background-color: rgba(193, 161, 255, 1);
+    background-color: rgba(43, 238, 160, 1);
 }
 
 .Noti-write:active {
@@ -158,7 +162,7 @@
 }
 
 .Bty-pos {
-    background-color: white;
+    background-color: #fbfcf5;
     border-radius: 10px;
     width: 20rem;
     position: relative;

@@ -1,6 +1,5 @@
 .Lay {
     text-align: center;
-    font-family: "myfont";
 }
 
 .Lay-header {
@@ -15,38 +14,45 @@
 }
 
 .Lay-lay {
-    background: linear-gradient(#AC91E6 , white, #AC91E6);
+    background: linear-gradient(#23c686 , white, #23c686);
     border-radius: 10px;
     height: 50rem;
     width: 30rem;
 }
 
 .Lay-title {
-    background-color: rgba(172, 145, 230, 1);
-    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    font-family: 'ROKABold';
+    background-color: rgba(40, 93, 104, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
     text-shadow: 1px 1px 1px #000;
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     color: white;
-    margin-top: 1rem;
+    margin-top: 10rem;
     margin-bottom: 1rem;
     border-radius: 10px;
-    width: 18rem;
+    width: 20rem;
     position: relative;
-    left: 6rem;
+    left: 5rem;
 }
 
-.Lay-img {
-    background-color: black;
-    border-radius: 10px;
-    display: flex;
-    width: 25rem;
-    position: relative;
-    left: 2.5rem;
+.Lay-name {
+    color: #c5d893;
+    padding: 10px;
+}
+
+#kname {
+    font-family: 'SUITE-Regular';
+    text-decoration: underline;
+}
+
+#efull {
+    font-family: serif;
 }
 
 .Lay-btns {
-    background-color: rgba(172, 145, 230, 1);
-    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    font-family: 'SUITE-Regular';
+    background-color: rgba(40, 93, 104, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
     text-shadow: 1px 1px 1px #000;
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     color: white;
@@ -59,7 +65,7 @@
 }
 
 .Lay-btns:hover {
-    background-color: rgba(193, 161, 255, 1);
+    background-color: rgba(58, 138, 154, 1);
 }
 
 .Lay-btns:active {
@@ -122,8 +128,8 @@
     height: 3rem;
     font-size: xx-large;
     text-decoration: none;
-    background-color: rgba(172, 145, 230, 1);
-    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    background-color: rgba(35, 198, 134, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
     text-shadow: 1px 1px 1px #000;
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     border-radius: 1rem;
@@ -133,7 +139,7 @@
 }
 
 .Lay-bspace:hover {
-    background-color: rgba(193, 161, 255, 1);
+    background-color: rgba(43, 238, 160, 1);
 }
 
 .Lay-bspace:active {

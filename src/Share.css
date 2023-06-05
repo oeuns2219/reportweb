@@ -14,9 +14,10 @@
 }
 
 .Sha-title {
+    font-family: 'SUITE-Regular';
     margin-bottom: 2rem;
-    background-color: rgba(172, 145, 230, 1);
-    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    background-color: rgba(35, 198, 134, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
     text-shadow: 1px 1px 1px #000;
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
@@ -27,7 +28,7 @@
 }
 
 .Sha-process {
-    background: linear-gradient(#AC91E6, 5%, white);
+    background: linear-gradient(#23c686, 5%, #fbfcf5);
     color: white;
     width: 55rem;
     height: 60.5rem;
@@ -47,6 +48,7 @@
 }
 
 .Sha-input {
+    font-family: 'SUITE-Regular';
     font-size: 1.5rem;
     width: 50.5rem;
     height: 44.5rem;
@@ -54,6 +56,7 @@
 }
 
 .Sha-btn {
+    font-family: 'SUITE-Regular';
     font-size: xx-large;
     margin-top: 2rem;
 }
@@ -86,12 +89,20 @@
     height: 3rem;
     font-size: xx-large;
     text-decoration: none;
-    background-color: rgba(172, 145, 230, 1);
-    background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+    background-color: rgba(35, 198, 134, 1);
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
     text-shadow: 1px 1px 1px #000;
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     border-radius: 1rem;
     color: white;
     position: absolute;
     top: calc(0% + 0.5rem); left: calc(50% - 27.5rem);
+}
+
+.Sha-bspace:hover {
+    background-color: rgba(43, 238, 160, 1);
+}
+
+.Sha-bspace:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }

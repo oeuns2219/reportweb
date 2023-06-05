@@ -30,46 +30,46 @@ function App() {
   }
 
   function btnhover(evt) {
-    if (evt.target.value !== state) evt.target.style.backgroundColor = 'rgba(193, 161, 255, 1)';
+    if (evt.target.value !== state) evt.target.style.backgroundColor = 'rgba(58, 138, 154, 1)';
   }
 
   function btnhout(evt) {
-    if (evt.target.value === state) evt.target.style.backgroundColor = 'rgba(126, 83, 217, 1)';
-    else evt.target.style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    if (evt.target.value === state) evt.target.style.backgroundColor = 'rgba(18, 46, 51, 1)';
+    else evt.target.style.backgroundColor = 'rgba(40, 93, 104, 1)';
   }
 
   function unaCli() {
-    document.getElementById('unabtn').style.backgroundColor = 'rgba(126, 83, 217, 1)';
-    document.getElementById('probtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
-    document.getElementById('resbtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
-    document.getElementById('shabtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    document.getElementById('unabtn').style.backgroundColor = 'rgba(18, 46, 51, 1)';
+    document.getElementById('probtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
+    document.getElementById('resbtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
+    document.getElementById('shabtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
     setState('미접수');
     setPage(1);
   }
 
   function proCli() {
-    document.getElementById('probtn').style.backgroundColor = 'rgba(126, 83, 217, 1)';
-    document.getElementById('unabtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
-    document.getElementById('resbtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
-    document.getElementById('shabtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    document.getElementById('probtn').style.backgroundColor = 'rgba(18, 46, 51, 1)';
+    document.getElementById('unabtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
+    document.getElementById('resbtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
+    document.getElementById('shabtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
     setState('처리중');
     setPage(1);
   }
 
   function resCli() {
-    document.getElementById('resbtn').style.backgroundColor = 'rgba(126, 83, 217, 1)';
-    document.getElementById('probtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
-    document.getElementById('unabtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
-    document.getElementById('shabtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    document.getElementById('resbtn').style.backgroundColor = 'rgba(18, 46, 51, 1)';
+    document.getElementById('probtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
+    document.getElementById('unabtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
+    document.getElementById('shabtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
     setState('처리완료');
     setPage(1);
   }
 
   function shaCli() {
-    document.getElementById('shabtn').style.backgroundColor = 'rgba(126, 83, 217, 1)';
-    document.getElementById('probtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
-    document.getElementById('unabtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
-    document.getElementById('resbtn').style.backgroundColor = 'rgba(172, 145, 230, 1)';
+    document.getElementById('shabtn').style.backgroundColor = 'rgba(18, 46, 51, 1)';
+    document.getElementById('probtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
+    document.getElementById('unabtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
+    document.getElementById('resbtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
     setState('공유받음');
     setPage(1);
   }

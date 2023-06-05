@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: white;
+  background-color: #fbfcf5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,8 +14,9 @@
 }
 
 .App-title {
+  font-family: 'SUITE-Regular';
   margin-bottom: 1rem;
-  background-color: white;
+  background-color: #fbfcf5;
   border-radius: 10px;
   width: 20rem;
   font-size: xx-large;
@@ -24,7 +25,8 @@
 }
 
 .App-case {
-  background-color: white;
+  font-family: 'SUITE-Regular';
+  background-color: #fbfcf5;
   border-radius: 10px;
   width: 52.5rem;
   height: 50.5rem;
@@ -39,8 +41,9 @@
 }
 
 .App-filter {
-  background-color: rgba(172, 145, 230, 1);
-  background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+  font-family: 'SUITE-Regular';
+  background-color: rgba(40, 93, 104, 1);
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
   text-shadow: 1px 1px 1px #000;
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
   border-left: none;
@@ -52,7 +55,7 @@
 }
 
 .App-filter:hover {
-  background-color: rgba(193, 161, 255, 1);
+  background-color: rgba(58, 138, 154, 1);
 }
 
 .App-filter:active {
@@ -68,7 +71,7 @@
 }
 
 .App-reportbox {
-  background: linear-gradient(#AC91E6 , white, #AC91E6);
+  background: linear-gradient(#23c686 , white, #23c686);
   width: 55rem;
   height: 60.5rem;
 }
@@ -77,8 +80,8 @@
   margin-left: 1.25rem;
   margin-top: 1rem;
   font-size: 1.5rem;
-  background-color: rgba(172, 145, 230, 1);
-  background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+  background-color: rgba(35, 198, 134, 1);
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   width: 50rem;
@@ -99,7 +102,7 @@
   width: 10rem;
   position: relative;
   top: 0.5rem; left: 27.5rem; 
-  background-color: white;
+  background-color: #fbfcf5;
   border-radius: 10px;
   float: left;
 }
@@ -109,7 +112,7 @@
   height: 4rem;
   position: relative;
   top: 3.5rem; left: 0.5rem;
-  background-color: white;
+  background-color: #fbfcf5;
   border-radius: 10px;
   float: left;
 }
@@ -118,7 +121,7 @@
   width: 15rem;
   position: relative;
   bottom: 5.5rem; left: 0.5rem;
-  background-color: white;
+  background-color: #fbfcf5;
   border-radius: 10px;
   float: left;
 }
@@ -127,7 +130,7 @@
   width: 23rem;
   position: relative;
   bottom: 3rem; right: 14.5rem;
-  background-color: white;
+  background-color:#fbfcf5;
   border-radius: 10px;
   float: left;
 }
@@ -150,7 +153,8 @@
 }
 
 .App-page {
-  background-color: white;
+  font-family: 'SUITE-Regular';
+  background-color: #fbfcf5;
   width: 3rem;
   height: 2.5rem;
   position: relative;
@@ -174,11 +178,10 @@
   height: 3rem;
   font-size: xx-large;
   text-decoration: none;
-  background-color: rgba(172, 145, 230, 1);
-  background-image: linear-gradient(to top left, rgba(79, 67, 102, 0.2), rgba(79, 67, 102, 0.2) 30%, rgba(0, 0, 0, 0));
+  background-color: rgba(35, 198, 134, 1);
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
   text-shadow: 1px 1px 1px #000;
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
-  opacity: 0.8;
   border-radius: 1rem;
   color: white;
   position: absolute;
@@ -186,11 +189,11 @@
 }
 
 #unabtn {
-  background-color: rgba(126, 83, 217, 1);
+  background-color: rgba(18, 46, 51, 1);
 }
 
 .App-bspace:hover {
-  background-color: rgba(193, 161, 255, 1);
+  background-color: rgba(43, 238, 160, 1);
 }
 
 .App-bspace:active {
