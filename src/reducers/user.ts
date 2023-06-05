@@ -11,18 +11,27 @@ export const setcode = (code:number) => ({
     payload: code,
 });
 
+export const setpos = (pos:string) => ({
+    type: 'SET_POS',
+    payload: pos,
+});
+
 type UserInitialType = {
     uid: number | null,
     code: number | null,
+    pos: string | null,
 }
 
 const initialState = {
     uid: null,
 	code: null,
+    pos: null,
 }
 
 type UserActionType =
     | ReturnType<typeof setuid>
+    | ReturnType<typeof setcode>
+    | ReturnType<typeof setpos>
 
 const user = (state:UserInitialType = initialState, action:UserActionType) => {
     switch (action.type) {
@@ -32,11 +41,16 @@ const user = (state:UserInitialType = initialState, action:UserActionType) => {
                 uid: action.payload,
             }
         }
-
 		case 'SET_CODE': {
 			return {
 				...state,
 				code: action.payload,
+			}
+		}
+        case 'SET_POS': {
+			return {
+				...state,
+				pos: action.payload,
 			}
 		}
         default:

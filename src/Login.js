@@ -27,7 +27,7 @@ export const codelist = [
     },
     {
         code: '5',
-        name: '169여단'
+        name: '168-2대대'
     }
     
 ]

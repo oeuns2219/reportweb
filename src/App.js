@@ -19,6 +19,7 @@ function App() {
   const [ldum, setLdum] = useState(0);
   var usercode = useSelector((state) => state.user.code);
   const dispatch = useDispatch();
+  const uclist = ['2', '4', '5'];
 
   useEffect(()=>window.localStorage.setItem('usercode', JSON.stringify(usercode)));
   if (usercode === null) usercode = JSON.parse(window.localStorage.getItem('usercode'));
@@ -128,7 +129,7 @@ function App() {
       });
     });
   }, []);
-  const filtered = statelist.includes(state) ? reports.filter(report => report.state === state) : reports.filter(reports => JSON.parse(reports.shareList).includes(usercode));
+  const filtered = statelist.includes(state) ? ( uclist.includes(usercode) ? reports.filter(report => report.position.indexOf('화성') !== -1).filter(report => report.state === state) : reports.filter(report => report.position.indexOf('화성') === -1).filter(report => report.state === state) ) : reports.filter(reports => JSON.parse(reports.shareList).includes(usercode));
 
   const listReports = filtered.slice((page-1)*4,page*4).map(report => {
 

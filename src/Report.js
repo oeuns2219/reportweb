@@ -1,13 +1,14 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './Report.css';
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { database } from './firebase';
 import { ref, onValue, child, update } from 'firebase/database';
 import { codelist } from './Login';
+import { setpos } from './reducers/user';
 
 function Report() {
-
+    const dispatch = useDispatch();
     const uid = useSelector((state) => state.user.uid);
     var usercode = useSelector((state) => state.user.code);
     useEffect(()=>window.localStorage.setItem('usercode', JSON.stringify(usercode)));
@@ -23,6 +24,8 @@ function Report() {
 
     if (report == null) report = JSON.parse(window.localStorage.getItem('report'));
     window.localStorage.setItem('report', JSON.stringify(report));
+
+    dispatch(setpos(report.position));
     
     const [state, setState] = useState(report.state);
     const [page, setPage] = useState(0);
@@ -143,7 +146,7 @@ function Report() {
             <div className='Rep-report'>
                 <div className='Rep-type'>{report.type}</div>
                 <img className='Rep-photo' src={photolist[page]} id='photo' alt='report'/>
-                <div className='Rep-pos'>{report.position}</div>
+                <input type='button' value={report.position} className='Rep-pos' onClick={()=>navigate('/home/reportlist/report/mapview')}></input>
                 <div className='Rep-detail'>{report.detail}</div>
                 <div className='Rep-state'>{state}</div>
                 <input id='accbtn' className='Rep-pbtns' type='button' value='접수하기' onClick={accCli}></input>
