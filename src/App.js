@@ -95,7 +95,15 @@ function App() {
   useEffect(() => {
     onChildAdded(repref, (snapshot) => {
         async function listupdate() {
-          if (reports.every((report) => report.uid !== snapshot.val().uid)) reports.unshift(snapshot.val());
+          if (reports.every((report) => report.uid !== snapshot.val().uid)) {
+            reports.unshift(snapshot.val());
+            if (((uclist.includes(usercode) && snapshot.val().position.indexOf('화성') !== -1) || (!uclist.includes(usercode) && snapshot.val().position.indexOf('화성') === -1)) && snapshot.val().state === '미접수') {
+              var mp3_url = 'https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3';
+              var beep = new Audio(mp3_url);
+              beep.onended = function () {alert('새로운 신고가 발생하였습니다.');};
+              beep.play();
+            }
+          }
           return reports;
         }
         listupdate().then((result) => {
