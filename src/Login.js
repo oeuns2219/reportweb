@@ -70,6 +70,7 @@ function Login () {
         <div className="Lay">
             <header className="Lay-header">
                 <div className='Lay-lay'>
+                   
                     <div className='Lay-title'>
                         <div id='kname' className='Lay-name'>모두의 육군 주민 신고 앱</div>
                         <div className='Lay-name' style={{fontSize: '100px'}}>A R A</div>
@@ -77,11 +78,11 @@ function Login () {
                         <div className='Lay-name'>&#40;관리자 모드&#41;</div>
                     </div>
                     <input type='number' id='code' min='0' max='5' placeholder='관리자 코드를 입력해주세요.' className='Log-input' onKeyDown={ekeydown}></input>
-                    <input type='button' id='Log-btn' className='Lay-btns' onClick={btnCli} value='로그인하기'></input>
+                    <input type="button" id='Log-btn' className='Lay-btns'onClick={btnCli} value='로그인하기'></input>
                     <span className='Log-popup' id='pu1'>유효하지 않은<br></br>관리자 코드입니다.</span>
                     <span className='Log-popup' id='pu2'></span>
                     <div className='Log-popdown' id='pd1' onClick={pdCli}></div>
-                    <Link to='/home' className='Log-popdown' id='pd2'></Link>
+                    <Link to='/home/noticelist' className='Log-popdown' id='pd2'></Link>
                 </div>
             </header>
         </div>

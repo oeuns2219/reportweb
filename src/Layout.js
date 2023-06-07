@@ -91,18 +91,21 @@ function Layout () {
     }
 
     return (
-        <div className="Lay">
+        <div className="Lay" >
             <header className="Lay-header">
-                <div className='Lay-lay'>
+                <div className='Lay-lay' >
                     <div className='Lay-title'>
                         <div id='kname' className='Lay-name'>모두의 육군 주민 신고 앱</div>
                         <div className='Lay-name' style={{fontSize: '100px'}}>A R A</div>
                         <div id='efull' className='Lay-name'>Army Report App</div>
                         <div className='Lay-name'>&#40;{codeobj[0].name}&#41;</div>
                     </div>
-                    <input id='Lay-notibtn' className='Lay-btns' onClick={() => navigate('/home/noticelist')} defaultValue='공지사항 목록'></input>
-                    <input id='Lay-repbtn' className='Lay-btns' onClick={repCli} defaultValue='주민신고 목록'></input>
-                    <input id='Lay-btybtn' className='Lay-btns' onClick={() => navigate('/home/bountylist')} defaultValue='수배 현황'></input>
+                    <div className="Lay-btnContainer">
+                        <input id='Lay-notibtn' className='Lay-btns' onClick={() => navigate('/home/noticelist')} defaultValue='공지사항 목록'></input>
+                        <input id='Lay-repbtn' className='Lay-btns' onClick={repCli} defaultValue='주민신고 목록'></input>
+                        <input id='Lay-btybtn' className='Lay-btns' onClick={() => navigate('/home/bountylist')} defaultValue='수배 현황'></input>
+                    </div>
+                   
                     <Link className='Lay-bspace' to='/'>&#27;</Link>
                 </div>
             </header>

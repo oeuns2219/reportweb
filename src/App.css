@@ -1,10 +1,14 @@
 .App {
   text-align: center;
+    width: 100%;
+  height: 100%;
 }
 
 .App-header {
   background-color: #fbfcf5;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,41 +20,48 @@
 .App-title {
   font-family: 'SUITE-Regular';
   margin-bottom: 1rem;
-  background-color: #fbfcf5;
+  /* background-color: #fbfcf5; */
+  color: white;
   border-radius: 10px;
   width: 20rem;
   font-size: xx-large;
   position: relative;
-  top: 0.5rem; left: 17.5rem;
+  /* top: 0.5rem; left: 17.5rem; */
 }
 
 .App-case {
   font-family: 'SUITE-Regular';
-  background-color: #fbfcf5;
+  background-color: #f2f4e8;
   border-radius: 10px;
-  width: 52.5rem;
-  height: 50.5rem;
+  width: 90%;
+  height:78%;
   position: relative;
-  left: 1.25rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* left: 1.25rem; */
 }
 
 .App-sbtn {
   border-radius: 10px;
-  width: 52.5rem;
-  height: 4rem;
+  /* width: 52.5rem; */
+  width: 100%;
+  height: 10%;
 }
 
 .App-filter {
   font-family: 'SUITE-Regular';
-  background-color: rgba(40, 93, 104, 1);
+  background-color: #1d3853;
   background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
   text-shadow: 1px 1px 1px #000;
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
   border-left: none;
   font-size: xx-large;
   float: left;
-  width: 13.125rem;
-  height: 4rem;
+  /* width: 13.125rem; */
+  width: 25%;
+  height:100%;
   color: white;
 }
 
@@ -71,29 +82,39 @@
 }
 
 .App-reportbox {
-  background: linear-gradient(#23c686 , white, #23c686);
-  width: 55rem;
-  height: 60.5rem;
+  background: linear-gradient( #285d68,#23c686 );
+  /* width: 55rem;
+  height: 60.5rem; */
+  width: 100%;
+  height: 100%;
+  position:relative;
+  justify-content: center;
+  align-items: center;
+  display:flex;
+  flex-direction: column;
 }
 
 .App-report {
-  margin-left: 1.25rem;
+  /* /* margin-left: 1.25rem; */
   margin-top: 1rem;
   font-size: 1.5rem;
   background-color: rgba(35, 198, 134, 1);
   background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  width: 50rem;
-  height: 10rem;
+  width: 90%;
+  height: 23%;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
 }
 
 .App-photo {
-  width: 11rem;
-  height: 9rem;
-  margin-left: 0.5rem;
+  width: 10%;
+  height: 80%;
+  /* margin-left: 0.5rem;
   margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.5rem; */
   border-radius: 10px;
   float: left;
 }
@@ -101,44 +122,71 @@
 .App-state {
   width: 10rem;
   position: relative;
-  top: 0.5rem; left: 27.5rem; 
+  /* top: 0.5rem; left: 27.5rem;  */
   background-color: #fbfcf5;
   border-radius: 10px;
   float: left;
+  font-size:smaller;
 }
 
 .App-detail {
-  width: 37rem;
-  height: 4rem;
+  
+  /* height: 4rem; */
   position: relative;
-  top: 3.5rem; left: 0.5rem;
+  /* top: 3.5rem; left: 0.5rem; */
   background-color: #fbfcf5;
   border-radius: 10px;
   float: left;
+  margin-bottom: 0.5rem;
+  
+}
+
+.App-details{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+margin-left: 2.5%;
+height: 100%;
+justify-content: center;
+
+/* justify-content: space-evenly; */
+}
+.App-details1{
+  display: flex;
+  /* flex-direction: column; */
+  width: 100%;
+/* margin-left: 2.5%; */
+justify-content:space-between;
+flex-direction: row;
+margin-bottom: 0.5rem;
+height: 20%;
 }
 
 .App-type {
   width: 15rem;
+  /* height: ; */
   position: relative;
-  bottom: 5.5rem; left: 0.5rem;
+  /* bottom: 5.5rem; left: 0.5rem; */
   background-color: #fbfcf5;
   border-radius: 10px;
   float: left;
+  font-size:smaller;
 }
 
 .App-pos {
   width: 23rem;
   position: relative;
-  bottom: 3rem; right: 14.5rem;
+  /* bottom: 3rem; right: 14.5rem; */
   background-color:#fbfcf5;
   border-radius: 10px;
   float: left;
+  font-size:smaller;
 }
 
 .App-link {
   width: 8rem;
   position: relative;
-  bottom: 5rem; left: 17.5rem;
+  /* bottom: 5rem; left: 17.5rem; */
   float: left;
   text-decoration: none;
   color: black;
@@ -148,7 +196,7 @@
   font-size: 16px;
   width: 12rem;
   position: relative;
-  bottom: 7.35rem; left: 15.5rem;
+  /* bottom: 7.35rem; left: 15.5rem; */
   float: left;
 }
 
@@ -158,19 +206,19 @@
   width: 3rem;
   height: 2.5rem;
   position: relative;
-  top: 0.5rem; left: 24rem;
+  /* top: 0.5rem; left: 24rem; */
   border-radius: 5px;
   float: left;
 }
 
 #App-down {
   position: relative;
-  top: 0.5rem; left: 23rem;
+  /* top: 0.5rem; left: 23rem; */
 }
 
 #App-up {
   position: relative;
-  top: 0.5rem; left: 25rem;
+  /* top: 0.5rem; left: 25rem; */
 }
 
 .App-bspace {

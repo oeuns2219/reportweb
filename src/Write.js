@@ -29,6 +29,7 @@ function Write () {
     function MyWrt() {
         return (
             <div className='Wrt-notice'>
+                <Link className='Not-bspace' to='/home/noticelist'>&#27;</Link>
                 <div className='Wrt-title'>공지사항</div>
                 <input type="text" id="title" placeholder='공지제목을 적어주세요.' className='Wrt-tinput'></input>
                 <div className='Wrt-date'>{notice.date}</div>
@@ -36,9 +37,13 @@ function Write () {
                     <textarea id='content' placeholder='공지할 내용을 적어주세요.' className='Wrt-input'></textarea>
                 </div>
                 <button className='Wrt-btn' onClick={btnCli}>등록하기</button>
+                
+                <div className="pop-container">
                 <span className='Wrt-popup' id='pu'>공지사항이 등록되었습니다.</span>
                 <Link to='/home/noticelist' className='Wrt-popdown' id='pd'></Link>
-                <Link className='App-bspace' to='/home/noticelist'>&#27;</Link>
+                </div>
+              
+                
             </div>
         );
     }

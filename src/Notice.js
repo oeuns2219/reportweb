@@ -22,11 +22,12 @@ function Notice() {
     function MyNoti() {
         return (
             <div className='Not-notice'>
+                 <Link className='Not-bspace' to='/home/noticelist'>&#27;</Link>
                 <div className='Not-title'>공지사항</div>
                 <div className='Not-tcontent'>제목: {notice.title}</div>
                 <div className='Not-date'>{notice.date}</div>
                 <div className='Not-content'>{notice.content}</div>
-                <Link className='App-bspace' to='/home/noticelist'>&#27;</Link>
+               
             </div>
         );
     }

@@ -1,10 +1,13 @@
 .Noti {
     text-align: center;
+    width: 100%;
+    height: 100%;
 }
 
 .Noti-header {
     background-color: #fbfcf5;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,20 +17,30 @@
 }
 
 .Noti-notibox {
-    background: linear-gradient(#23c686 , white, #23c686);
-    width: 55rem;
-    height: 60.5rem;
+    background: linear-gradient( #285d68,#23c686 );
+    /* width: 55rem; */
+    /* height: 60.5rem; */
+    height: 100%;
+    /* justify-content: center;
+    display: flex; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .Noti-title {
     font-family: 'SUITE-Regular';
     margin-bottom: 2rem;
-    background-color: #fbfcf5;
+    /* background-color: #fbfcf5; */
     border-radius: 10px;
     width: 20rem;
     font-size: xx-large;
     position: relative;
-    top: 0.5rem; left: 17.5rem;
+    color: white;
+    /* text-decoration: "white"; */
+    /* top: 0.5rem; left: 17.5rem; */
 }
 
 .Noti-case {
@@ -35,23 +48,34 @@
     background-color: #fbfcf5;
     border-radius: 10px;
     width: 52.5rem;
-    height: 51.5rem;
+    /* height: 51.5rem; */
+    height: 70%;
     position: relative;
-    left: 1.25rem;
+    margin-bottom: 20px;
+    /* left: 1.25rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .Noti-noti {
-    margin-left: 1.25rem;
-    margin-top: 2rem;
-    font-size: 1.5rem;
+    /* margin-left: 1.25rem;
+    /* margin-top: 2rem; */
+    display:flex;
+    flex-direction: column;
+    font-size: 1.5rem; 
     background-color: rgba(35, 198, 134, 1);
     background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-    width: 50rem;
-    height: 6.5rem;
+    width: 80%;
+    height: 20%;
     position: relative;
-    top:1.25rem;
+    /* top:1.25rem; */
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.25rem;
 }
 
 .Noti-date {
@@ -59,31 +83,48 @@
     border-radius: 10px;
     width: 17rem;
     position: relative;
-    top: 30%; left: 45%;
+    /* top: 30%; left: 45%; */
 }
 
 .Noti-cont {
     background-color: #fbfcf5;
     border-radius: 10px;
-    width: 48rem;
+    width:60%;
     height: 2rem;
     position: relative;
-    top: 10%; left: 1.5%;
+    /* top: 10%; left: 1.5%; */
 }
-
+.Noti-cont2 {
+    display: flex;
+    width:80%;
+    height: 2rem;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    /* top: 10%; left: 1.5%; */
+}
 .Noti-link {
     width: 8rem;
     position: relative;
-    bottom: 0rem; left: 41rem;
+    /* bottom: 0rem; left: 41rem; */
     float: left;
     text-decoration: none;
     color: black;
 }
+.pageButtonContainer{
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 
 .Bty-link {
     width: 8rem;
     position: relative;
-    bottom: 2rem; left: 41rem;
+    /* bottom: 2rem; left: 41rem; */
     float: left;
     text-decoration: none;
     color: black;
@@ -95,7 +136,7 @@
     width: 3rem;
     height: 2.5rem;
     position: relative;
-    top: 0.5rem; left: 23.5rem;
+    /* top: 0.5rem; left: 23.5rem; */
     border-radius: 5px;
     float: left;
 }
@@ -103,14 +144,14 @@
 #Noti-down {
     height: 2.5rem;
     position: relative;
-    top: 0.5rem; left: 22rem;
+    /* top: 0.5rem; left: 22rem; */
     float: left;
 }
 
 #Noti-up {
     height: 2.5rem;
     position: relative;
-    top: 0.5rem; left: 25rem;
+    /* top: 0.5rem; left: 25rem; */
     float: left;
 }
 
@@ -123,7 +164,7 @@
     border-radius: 10px;
     width: 13rem;
     position: relative;
-    top: 0.5rem; left: 16rem;
+    /* top: 0.5rem; left: 16rem; */
     text-decoration: none;
     color: white;
     font-size: x-large;
@@ -164,7 +205,8 @@
 .Bty-pos {
     background-color: #fbfcf5;
     border-radius: 10px;
-    width: 20rem;
+    /* width: 20rem; */
+    min-width: 10%;
     position: relative;
-    bottom: 0.05rem; left: 1.5%;
+    /* bottom: 0.05rem; left: 1.5%; */
 }

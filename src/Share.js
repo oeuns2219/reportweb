@@ -32,6 +32,7 @@ function Share () {
     function MySha() {
         return (
             <div className='Sha-process'>
+                 <Link className='Sha-bspace' to='/home/reportlist/report'>&#27;</Link>
                 <div className='Sha-title'>조치 사항</div>
                 <div className='Sha-content'>
                     <textarea id='content' placeholder='조치 사항을 적어주세요.' className='Sha-input' defaultValue={report.processText}></textarea>
@@ -39,7 +40,7 @@ function Share () {
                 <button className='Sha-btn' onClick={btnCli}>저장하기</button>
                 <span className='Sha-popup' id='pu'>저장이 완료되었습니다.</span>
                 <Link to='/home/reportlist/report' className='Sha-popdown' id='pd'></Link>
-                <Link className='Sha-bspace' to='/home/reportlist/report'>&#27;</Link>
+               
             </div>
         );
     }

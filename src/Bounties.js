@@ -25,7 +25,7 @@ function Bounties () {
     }
     
     function upCli() {
-        if (bounties.length > page*6) setPage(page+1);
+        if (bounties.length > page*4) setPage(page+1);
     }
 
     //var bounties = [];
@@ -62,12 +62,14 @@ function Bounties () {
     useEffect(()=>window.localStorage.setItem('bounties', JSON.stringify(bounties)));
     if (bounties.length === 0) bounties = JSON.parse(window.localStorage.getItem('bounties'));
 */
-    const Bountylist = bounties.slice((page-1)*6,page*6).map(bounty =>
+    const Bountylist = bounties.slice((page-1)*4,page*4).map(bounty =>
         <article className='Noti-noti' id={bounty.uid}>
             <section className='Noti-cont'>{(bounty.title.length > 30 ? bounty.title.substring(0,30)+'...' : bounty.title)}</section>
-            <section className='Noti-date'>{bounty.date}</section>
-            <section className='Bty-pos'>{bounty.pos}</section>
-            <Link to='/home/bountylist/bounty' className='Bty-link' onClick={bounCli}>자세히 보기</Link>
+            <div className='Noti-cont2' id={bounty.uid}>
+                <section className='Noti-date'>{bounty.date}</section>
+                <section className='Bty-pos'>{bounty.pos}</section>
+                <Link to='/home/bountylist/bounty' className='Bty-link' onClick={bounCli}>자세히 보기</Link>
+            </div>
         </article>
     )
     
@@ -79,11 +81,14 @@ function Bounties () {
                     <div className='Noti-case'>
                         {Bountylist}
                     </div>
-                    <input id='Noti-down' className='Rep-udbtn' type='button' value='<' onClick={downCli}></input>
-                    <div className='Noti-page'>{page}/{1 + (bounties.length - bounties.length%6)/6}</div>
-                    <input id='Noti-up' className='Rep-udbtn' type='button' value='>' onClick={upCli}></input>
+                    <div className="pageButtonContainer">
+                        <input id='Noti-down' className='Rep-udbtn' type='button' value='<' onClick={downCli}></input>
+                        <div className='Noti-page'>{page}/{bounties.length===0?1:1 + Math.floor((bounties.length-1)/4)}</div>
+                        <input id='Noti-up' className='Rep-udbtn' type='button' value='>' onClick={upCli}></input>
+                    </div>
+                    
                     <input type='button' className='Noti-write' onClick={()=>navigate('/home/bountylist/write')} value='수배하기'></input>
-                    <Link className='Noti-bspace' to='/home'>&#27;</Link>
+                    {/* <Link className='Noti-bspace' to='/home'>&#27;</Link> */}
                 </div>
             </header>
         </div>

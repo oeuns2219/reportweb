@@ -34,12 +34,12 @@ function App() {
   }
 
   function btnhout(evt) {
-    if (evt.target.value === state) evt.target.style.backgroundColor = 'rgba(18, 46, 51, 1)';
+    if (evt.target.value === state) evt.target.style.backgroundColor = '#00ca90';
     else evt.target.style.backgroundColor = 'rgba(40, 93, 104, 1)';
   }
 
   function unaCli() {
-    document.getElementById('unabtn').style.backgroundColor = 'rgba(18, 46, 51, 1)';
+    document.getElementById('unabtn').style.backgroundColor = '#00ca90';
     document.getElementById('probtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
     document.getElementById('resbtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
     document.getElementById('shabtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
@@ -48,7 +48,7 @@ function App() {
   }
 
   function proCli() {
-    document.getElementById('probtn').style.backgroundColor = 'rgba(18, 46, 51, 1)';
+    document.getElementById('probtn').style.backgroundColor = '#00ca90';
     document.getElementById('unabtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
     document.getElementById('resbtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
     document.getElementById('shabtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
@@ -57,7 +57,7 @@ function App() {
   }
 
   function resCli() {
-    document.getElementById('resbtn').style.backgroundColor = 'rgba(18, 46, 51, 1)';
+    document.getElementById('resbtn').style.backgroundColor = '#00ca90';
     document.getElementById('probtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
     document.getElementById('unabtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
     document.getElementById('shabtn').style.backgroundColor = 'rgba(40, 93, 104, 1)';
@@ -148,12 +148,24 @@ function App() {
     return (
       <article className="App-report" id={report.uid}>
         <img src={photo} className="App-photo" alt="신고 사진"/>
-        <section className='App-state'>{report.state}</section>
-        <section className='App-detail'>{(report.detail.length > 40 ? report.detail.substring(0,40)+'...' : report.detail)}</section>
-        <section className='App-type'>{report.type}</section>
-        <section className='App-pos'>{report.position}</section>
-        <section className='App-date'>{report.date}</section>
-        <Link to='/home/reportlist/report' onClick={repCli} className='App-link'>자세히 보기</Link>
+        <div className='App-details'>
+          <div className="App-details1">
+            <section className='App-type'>{report.type}</section>
+            <section className='App-date'>{report.date}</section>
+            <section className='App-state'>{report.state}</section>
+
+          </div>
+          <section className='App-detail'>{(report.detail.length > 40 ? report.detail.substring(0,40)+'...' : report.detail)}</section>
+
+          <div className="App-details1" id={report.uid}>
+           
+            <section className='App-pos'>{report.position}</section>
+            <Link to='/home/reportlist/report' onClick={repCli} className='App-link'>자세히 보기</Link>
+
+          </div>
+        
+     
+        </div>
       </article>
     );
   });
@@ -172,10 +184,12 @@ function App() {
             </div>
             {listReports}
           </div>
+          <div className='pageButtonContainer'>
           <input id='App-down' className='Rep-udbtn' type='button' value='<' onClick={downCli}></input>
           <div className='App-page'>{page}/{1 + ((filtered.length - 1) - (filtered.length - 1)%4)/4}</div>
           <input id='App-up' className='Rep-udbtn' type='button' value='>' onClick={upCli}></input>
-          <Link className='App-bspace' to='/home'>&#27;</Link>
+          </div>
+          {/* <Link className='App-bspace' to='/home'>&#27;</Link> */}
         </div>
       </header>
     </div>

@@ -144,23 +144,40 @@ function Report() {
 
         return (
             <div className='Rep-report'>
+                <div className='Rep-topCon'>
+                <Link className='Rep-bspace' to='/home/reportlist'>&#27;</Link>
                 <div className='Rep-type'>{report.type}</div>
+                <input id='pnumbtn' className='Rep-pbtns' type='button' value='전화번호' onClick={pnumCli}></input>
+
+                </div>
+                <div className='Rep-middleCon'>
+                <input id='Rep-down' className='Rep-udbtn' type='button' value='<' onClick={downCli}></input>
+
                 <img className='Rep-photo' src={photolist[page]} id='photo' alt='report'/>
-                <input type='button' value={report.position} className='Rep-pos' onClick={()=>navigate('/home/reportlist/report/mapview')}></input>
-                <div className='Rep-detail'>{report.detail}</div>
+
+
+                <input id='Rep-up' type='button' className='Rep-udbtn' value='>' onClick={upCli}></input>
+
+                </div>
+
+                <div className='Rep-bottomCon'>
                 <div className='Rep-state'>{state}</div>
+                <input type='button' value={report.position} className='Rep-pos' onClick={()=>navigate('/home/reportlist/report/mapview')}></input>
+                <div>
                 <input id='accbtn' className='Rep-pbtns' type='button' value='접수하기' onClick={accCli}></input>
                 <input id='combtn' className='Rep-pbtns' type='button' value='처리완료하기' onClick={resCli}></input>
-                <input id='pnumbtn' className='Rep-pbtns' type='button' value='전화번호' onClick={pnumCli}></input>
-                <span className='Rep-pnum' id='pnum'>{report.pnumber}</span>
+                    
+                </div>
+
+                </div>
+                <div className='Rep-detail'>{report.detail}</div>
+                <span className='Rep-popup' id='pnum'>{report.pnumber}</span>
                 <span className='Rep-popup' id='p1'>이미 접수가 완료되었습니다.</span>
                 <span className='Rep-popup' id='p2'>먼저 접수를 해주시기 바랍니다.</span>
                 <span className='Rep-popup' id='p3'>이미 처리가 완료되었습니다.</span>
                 <div className='Rep-popdown' id='pd' onClick={pdCli}></div>
                 <div className='Rep-date'>{report.date}</div>
-                <input id='Rep-down' className='Rep-udbtn' type='button' value='<' onClick={downCli}></input>
-                <input id='Rep-up' type='button' className='Rep-udbtn' value='>' onClick={upCli}></input>
-                <Link className='Rep-bspace' to='/home/reportlist'>&#27;</Link>
+               
                 <div className='Rep-btncase'>
                     <input id='btn1' className='Rep-btns' type='button' value='대공혐의점'></input>
                     <input className='Rep-btns' type='button' value='공유 목록' onClick={()=>document.getElementById('checklist').style.visibility='visible'}></input>

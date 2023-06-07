@@ -1,38 +1,55 @@
 .Lay {
     text-align: center;
+    background: linear-gradient(#23c686 , white, #23c686);
+    height: 100%;
+    width: 100%;
+    
 }
 
 .Lay-header {
     background-color: white;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: black;
+    /* justify-content: center; */
+    
 }
 
 .Lay-lay {
-    background: linear-gradient(#23c686 , white, #23c686);
-    border-radius: 10px;
+    display: flex;
+    background: linear-gradient(#23c686 , #285d68);
+    /* border-radius: 10px; */
     height: 50rem;
     width: 30rem;
+    width:100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+
 }
 
 .Lay-title {
+    display: flex;
+    flex-direction: column;
     font-family: 'ROKABold';
-    background-color: rgba(40, 93, 104, 1);
-    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
-    text-shadow: 1px 1px 1px #000;
-    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    /* background-color: rgba(40, 93, 104, 1); */
+    /* background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0)); */
+    /* text-shadow: 1px 1px 1px #000; */
+    /* box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6); */
     color: white;
-    margin-top: 10rem;
-    margin-bottom: 1rem;
+    /* margin-top: 10rem; */
+    /* margin-bottom: 1rem; */
     border-radius: 10px;
     width: 20rem;
     position: relative;
-    left: 5rem;
+   margin-top:5%;
+    /* left: 5rem; */
 }
 
 .Lay-name {
@@ -43,13 +60,17 @@
 #kname {
     font-family: 'SUITE-Regular';
     text-decoration: underline;
+    color:white
 }
 
 #efull {
-    font-family: serif;
+    font-family: "GoL";
+    /* src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/행복고흥L.woff') format('woff'); */
+    color:white
 }
 
 .Lay-btns {
+    display: flex;
     font-family: 'SUITE-Regular';
     background-color: rgba(40, 93, 104, 1);
     background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
@@ -62,6 +83,19 @@
     width: 13rem;
     text-align: center;
     border: none;
+    align-self: center;
+    margin-top: 20px;
+    text-align: center;
+    position: relative;
+    /* padding: 0px; */
+    align-items: center;
+    justify-content: center;
+}
+.Lay-btnContainer {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+
 }
 
 .Lay-btns:hover {
@@ -74,17 +108,17 @@
 
 #Lay-notibtn {
     position: relative;
-    top: 1rem; left: 6.6rem;
+    /* top: 1rem; left: 6.6rem; */
 }
 
 #Lay-repbtn {
     position: relative;
-    top: 4.75rem; right: 6.6rem;
+    /* top: 4.75rem; right: 6.6rem; */
 }
 
 #Lay-btybtn {
     position: relative;
-    top: 6.1rem;
+    /* top: 6.1rem; */
 }
 
 .Log-input {
@@ -94,9 +128,12 @@
 }
 
 #Log-btn {
+    display: flex;
     width: 12rem;
     margin-top: 2rem;
     font-size: x-large;
+    text-align: center;
+    align-items: center;
 }
 
 .Log-popdown {
@@ -104,9 +141,9 @@
     visibility: hidden;
     opacity: 0.5;
     position: absolute;
-    top: 0%; left: calc(50% - 27.5rem);
-    width: 55rem;
-    height: 60.5rem;
+    /* top: 0%; left: calc(50% - 27.5rem); */
+    width: 100%;
+    height: 100%;
     z-index: 1;
     text-decoration: none;
 }
@@ -115,7 +152,7 @@
     visibility: hidden;
     width: 20rem;
     height: 7rem;
-    padding: 1rem;
+    /* padding: 1rem; */
     background-color: #D9D9D9;
     border-radius: 6px;
     position: absolute;
@@ -135,7 +172,7 @@
     border-radius: 1rem;
     color: white;
     position: absolute;
-    top: 10%; left: calc(50% - 15rem);
+    top: 10%; left: 10rem;
 }
 
 .Lay-bspace:hover {

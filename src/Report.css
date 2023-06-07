@@ -1,10 +1,16 @@
 .Rep {
     text-align: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
   
 .Rep-header {
     background-color: #D9D9D9;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    width: 100%;
+    height: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,9 +20,14 @@
 }
 
 .Rep-report {
-    background: linear-gradient(#23c686, 10%, #fbfcf5);
-    width: 55rem;
-    height: 60.5rem;
+    background: linear-gradient( #285d68,#23c686 );
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .Rep-type {
@@ -28,15 +39,35 @@
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     width: 20rem;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     position: relative;
-    left: 17.5rem;
+    /* left: 17.5rem; */
+}
+.Rep-topCon{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Rep-middleCon{
+    width: 60%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Rep-bottomCon{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .Rep-photo {
-    width: 35rem;
-    height: 25rem;
-    margin: 0.5rem;
+    width: 40%;
+    height: 100%;
+    /* margin: 0.5rem; */
 }
 
 .Rep-pos {
@@ -50,7 +81,7 @@
     border: none;
     width: 20rem;
     height: 39px;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     position: relative;
     font-size: large;
     line-height: 39px;
@@ -72,13 +103,13 @@
 
 .Rep-detail {
     font-family: 'SUITE-Regular';
-    background-color: #D9D9D9;
-    opacity: 0.75;
+    background-color: #f2f4e8;
+    /* opacity: 0.75; */
     border-radius: 10px;
-    width: 51rem;
+    width: 80%;
     height: 18rem;
-    margin-left: 1rem;
-    padding: 1rem;
+    /* margin-left: 1rem; */
+    padding-top: 1rem;
     font-size: 1.5rem;
 }
 
@@ -93,7 +124,7 @@
     width: 10rem;
     float: left;
     position: relative;
-    bottom: calc(24rem - 9px); left: 1rem;
+    /* bottom: calc(24rem - 9px); left: 1rem; */
 }
 
 .Rep-pbtns {
@@ -119,17 +150,17 @@
 
 #accbtn {
     position: relative;
-    bottom: 23.9rem; left: 17rem;
+    /* bottom: 23.9rem; left: 17rem; */
 }
 
 #combtn {
     position: relative;
-    bottom: 23.9rem; left: 17.5rem;
+    /* bottom: 23.9rem; left: 17.5rem; */
 }
 
 #pnumbtn {
     position: relative;
-    bottom: 52.75rem; left: 12rem;
+    /* bottom: 52.75rem; left: 12rem; */
 }
 
 .Rep-popdown {
@@ -137,10 +168,12 @@
     visibility: hidden;
     opacity: 0.5;
     position: absolute;
-    bottom: 0%;
-    width: 55rem;
-    height: 61rem;
+    /* bottom: 0%; */
+    width: 100%;
+    height: 100%;
     z-index: 1;
+    display: flex;
+    align-items: center;
 }
 
 .Rep-popup {
@@ -151,7 +184,9 @@
     background-color: #D9D9D9;
     border-radius: 6px;
     position: absolute;
-    bottom: 50%; left: calc(50% - 203.5px);
+    /* bottom: 50%; left: calc(50% - 203.5px); */
+    /* justify-self: center; */
+    align-self: center;
     z-index: 2;
 }
 
@@ -163,8 +198,9 @@
     height: 3rem;
     background-color: #D9D9D9;
     border-radius: 6px;
-    position: absolute;
-    top: 1.75%; right: 43.5%;
+    /* position: absolute; */
+    
+    /* top: 1.75%; right: 43.5%; */
     z-index: 2;
 }
 
@@ -190,13 +226,13 @@
 }
 
 #Rep-down {
-    position: absolute;
-    top: 24%; right: calc(50% + 25rem);
+    position: relative;
+    /* top: 24%; right: calc(50% + 25rem); */
 }
 
 #Rep-up {
-    position: absolute;
-    top: 24%; left: calc(50% + 25rem);
+    position: relative;
+    /* top: 24%; left: calc(50% + 25rem); */
 }
 
 .Rep-bspace {
@@ -210,8 +246,8 @@
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     border-radius: 1rem;
     color: white;
-    position: absolute;
-    top: calc(0% + 0.5rem); left: calc(50% - 27.5rem);
+    /* position: absolute; */
+    /* top: calc(0% + 0.5rem); left: calc(50% - 27.5rem); */
 }
 
 .Rep-bspace:hover {
@@ -224,7 +260,8 @@
 
 .Rep-btncase {
     border-radius: 10px;
-    width: 55rem;
+    /* width: 55rem; */
+    width: 80%;
     height: 5rem;
     position: absolute;
     bottom: 0%;
@@ -238,7 +275,8 @@
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
     font-size: xx-large;
     float: left;
-    width: 13.75rem;
+    /* width: 13.75rem; */
+    width: 25%;
     height: 5rem;
     border: 0;
     color: white;
